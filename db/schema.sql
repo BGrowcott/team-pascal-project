@@ -1,0 +1,2 @@
+DROP DATA IF EXISTS pascal_db;
+CREATE DATABASE pascal_db;
