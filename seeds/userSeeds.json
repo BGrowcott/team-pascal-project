@@ -1,0 +1,14 @@
+[
+    {
+        "first_name": "Akash",
+        "last_name": "Limbu",
+        "bio": "aspiring web-developer, likes traveling",
+        "profession": "unemployed"
+    },
+    {
+        "first_name": "Ben",
+        "last_name": "Growcott",
+        "bio": "aspiring web-developer, likes football",
+        "profession": "customer service"
+    }
+]
