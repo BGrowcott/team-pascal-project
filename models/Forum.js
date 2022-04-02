@@ -32,6 +32,10 @@ Forum.init(
         key: 'id',
       },
     },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: true
+    }
   },
   {
     sequelize,
