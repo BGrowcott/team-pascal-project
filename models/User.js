@@ -27,7 +27,14 @@ User.init(
         profession: {
             type: DataTypes.STRING,
             allowNull: false
-        }
+        },
+        account_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'account',
+              key: 'id',
+            },
+          },
     },
     {
         sequelize,

@@ -1,6 +1,12 @@
 const User = require('./User');
 const Forum = require('./Forum');
 const Comment = require('./Comment');
+const Account = require('./Account');
+
+User.belongsTo(Account, {
+  foreignKey: 'account_id',
+  onDelete: 'CASCADE'
+})
 
 User.hasMany(Forum, {
   foreignKey: 'user_id',
@@ -24,4 +30,4 @@ Forum.hasMany(Comment, {
   onDelete: 'CASCADE'
 });
 
-module.exports = { User, Forum, Comment };
+module.exports = { User, Forum, Comment, Account };

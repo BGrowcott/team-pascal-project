@@ -3,12 +3,14 @@
         "first_name": "Akash",
         "last_name": "Limbu",
         "bio": "aspiring web-developer, likes traveling",
-        "profession": "unemployed"
+        "profession": "unemployed",
+        "account_id": 1
     },
     {
         "first_name": "Ben",
         "last_name": "Growcott",
         "bio": "aspiring web-developer, likes football",
-        "profession": "customer service"
+        "profession": "customer service",
+        "account_id": 2
     }
 ]
