@@ -17,7 +17,7 @@ Forum.init(
             allowNull: false
         },
         content: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(1234),
             allowNull: false
         },
         date_created: {
@@ -43,4 +43,4 @@ Forum.init(
     }
 );
 
-module.exports = User; 
+module.exports = Forum; 
