@@ -2,6 +2,8 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { User } = require('../models');
 
+
+//Homepage
 router.get('/', async (req, res) => {
     try {
       res.render('homepage');
@@ -11,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 
-
+// Log in page
 router.get('/login', async (req, res) => {
   try {
     res.render('login');
@@ -20,9 +22,11 @@ router.get('/login', async (req, res) => {
     }
 });
 
+
+// Profile page
 router.get('/profile', async (req, res) => {
   try {
-    res.render('homepage');
+    res.render('profile');
   } catch (err) {
     res.status(500).json(err);
   }
