@@ -12,6 +12,19 @@ router.get('/', async (req, res) => {
     }
 });
 
+//User page
+router.get('/profile', async (req, res) => {
+  try {
+
+    const userData = await User.findAll();
+
+    const users = userData.map((user) => user.get({ plain: true }));
+
+    res.render('profile', {users});
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 // Log in page
 router.get('/login', async (req, res) => {
@@ -23,15 +36,7 @@ router.get('/login', async (req, res) => {
 });
 
 
-// Profile page
-router.get('/profile', async (req, res) => {
-  try {
-    res.render('profile');
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
+//Forums page
 router.get('/forums', async (req, res) => {
   try {
 
