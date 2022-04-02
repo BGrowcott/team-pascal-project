@@ -18,10 +18,17 @@ router.get('/profile/:id', async (req, res) => {
   const id = req.params.id
   try {
 
-    const userData = await User.findByPk(id);
+    const userData = await User.findByPk(id, {
+      where: {user_id: id},
+      include: [
+        {
+          model: Forum,
+        }
+      ]
+    });
 
     const user = userData.get({ plain: true });
-
+    console.log(user)
     res.render('profile', {user});
   } catch (err) {
     res.status(500).json(err);
