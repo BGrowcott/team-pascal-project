@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="profile-pic">
+                <h1>{{user.first_name}} {{user.last_name}}</h1>
                 <input type="image" src="" alt="Submit" width="48" height="48">
             </div>
             <div class="contact-info">
@@ -15,7 +16,7 @@
         <div class="col-md-6">
             <div class="bio">
                 <h3>BIO</h3>
-                <p>{{users.[0].bio}}</p>
+                <p>{{user.bio}}</p>
             </div>
         </div>
     </div>
