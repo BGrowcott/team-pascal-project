@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { User } = require('../models');
+const { User, Forum } = require('../models');
 
 
 //Homepage
@@ -27,6 +27,19 @@ router.get('/login', async (req, res) => {
 router.get('/profile', async (req, res) => {
   try {
     res.render('profile');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/forums', async (req, res) => {
+  try {
+
+    const forumData = await Forum.findAll();
+
+    const forums = forumData.map((forum) => forum.get({ plain: true }));
+
+    res.render('forums', {forums});
   } catch (err) {
     res.status(500).json(err);
   }
