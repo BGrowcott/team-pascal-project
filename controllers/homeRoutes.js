@@ -2,6 +2,9 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 const { User, Forum } = require('../models');
 
+// This page controls what is displayed when the user navigates the site
+// e.g /profile/:id will display the profile of the user with ":id"
+// the html displayed to the users is found in the views folder
 
 //Homepage
 router.get('/', async (req, res) => {
@@ -12,8 +15,8 @@ router.get('/', async (req, res) => {
     }
 });
 
-//User page
-router.get('/profile/:id', async (req, res) => {
+//Profile page
+router.get('/profile/:id', /*withAuth,*/ async (req, res) => { //uncomment withAuth once logging in is set up
 
   const id = req.params.id
   try {
