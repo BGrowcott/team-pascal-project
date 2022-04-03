@@ -8,6 +8,10 @@ const { User, Forum } = require('../models');
 
 //Homepage
 router.get('/', async (req, res) => {
+    if (req.session.logged_in){
+      res.redirect('/myprofile')
+      return
+    }
     try {
       res.render('homepage');
     } catch (err) {
@@ -16,7 +20,7 @@ router.get('/', async (req, res) => {
 });
 
 //Profile page
-router.get('/profile/:id', /*withAuth,*/ async (req, res) => { //uncomment withAuth once logging in is set up
+router.get('/profile/:id', withAuth, async (req, res) => {
 
   const id = req.params.id
   try {
@@ -31,8 +35,37 @@ router.get('/profile/:id', /*withAuth,*/ async (req, res) => { //uncomment withA
     });
 
     const user = userData.get({ plain: true });
-    console.log(user)
-    res.render('profile', {user});
+    res.render('profile', {
+      user,
+      logged_in: req.session.logged_in, 
+      accountId: req.session.account_id
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//my Profile 
+
+router.get(`/myprofile`, withAuth, async (req, res) => {
+  const id = req.session.account_id
+  try {
+
+    const userData = await User.findOne({
+      where: {account_id: id},
+      include: [
+        {
+          model: Forum,
+        }
+      ]
+    });
+
+    const user = userData.get({ plain: true });
+    res.render('profile', {
+      user,
+      logged_in: req.session.logged_in, 
+      accountId: req.session.account_id
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -46,7 +79,11 @@ router.get('/forums', async (req, res) => {
 
     const forums = forumData.map((forum) => forum.get({ plain: true }));
 
-    res.render('forums', {forums});
+    res.render('forums', {
+      forums,
+      logged_in: req.session.logged_in, 
+      accountId: req.session.account_id
+    });
   } catch (err) {
     res.status(500).json(err);
   }
