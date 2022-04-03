@@ -1,0 +1,124 @@
+
+body {
+    background-color: silver;
+    margin: 0;
+    padding: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    font-family:Poppins;
+}
+.wrapper{
+    background-color: #100;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 500px;
+    height: 420px;
+    color: #000;
+    top: 50%;
+    left: 50%;
+    padding: 60px 30px;
+    position: absolute;
+    border-radius: 10%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    box-shadow: 8px 8px 50px #100;
+}
+h1{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 22px;
+    color: silver;
+    text-align: center;
+    margin-bottom: 8%;
+    font-family:courgette;
+}
+.wrapper input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.wrapper input [type=text], .wrapper input [type=password] {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    outline: none;
+    height: 30px;
+    font-size: 10px;
+    opacity: 1;
+    color: #ccc;
+}
+
+.wrapper input [type=submit] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #f6648b;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+.wrapper input [type=submit] :hover{
+    cursor: pointer;
+}
+.wrapper a{
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+}
+
+.wrapper a:hover{
+    color: #fff;
+    opacity: 1;
+}
+.bottom-text{
+    color: #fff;
+}
+
+.bottom-text input{
+    width: 10%;
+    float: left;
+}
+.bottom-text a{
+    float: right;
+
+
+}
+.socials{
+    margin-top: 12%;
+    text-align: center;
+}
+
+.socials a{
+ 
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+
+}
+
+.socials a:nth-last-child(1) {
+    background: #3b5998;
+}
+.socials a:nth-last-child(2) {
+    background: #55acee;
+}
+.socials a:nth-last-child(3) {
+    background: #bd081c;
+}
+.socials a:nth-last-child(4) {
+    background: #0077b5;
+}
+
+#overlay-area{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5, green, blue, alpha);
+    z-index: -5;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}
+
