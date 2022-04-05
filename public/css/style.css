@@ -7,6 +7,10 @@ h1 {
 }
 
 .form-container {
-    width: 60%;
+    width: 45%;
     margin: auto;
+}
+
+.forms-container {
+    display: flex;
 }

@@ -13,6 +13,10 @@ User.hasMany(Forum, {
   onDelete: 'CASCADE'
 });
 
+User.hasMany(User, {
+  foreignKey: 'following',
+});
+
 Forum.belongsTo(User, {
   foreignKey: 'user_id'
 });

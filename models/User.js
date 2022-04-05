@@ -5,44 +5,51 @@ const sequelize = require('../config/connection.js');
 class User extends Model {}
 
 User.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        first_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        last_name: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        bio: {
-            type: DataTypes.STRING(150),
-            allowNull: false
-        },
-        profession: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        account_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'account',
-              key: 'id',
-            },
-          },
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'user',
-    }
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    bio: {
+      type: DataTypes.STRING(150),
+      allowNull: true,
+    },
+    profession: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    account_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'account',
+        key: 'id',
+      },
+    },
+    following: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'User',
+        key: 'id',
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
+  }
 );
 
-module.exports = User; 
+module.exports = User;
