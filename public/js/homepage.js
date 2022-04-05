@@ -24,3 +24,25 @@ async function logIn(e) {
     console.log(response)
   }
 }
+
+$('#signup-button').click(signUp);
+
+async function singUp(e) {
+  e.preventDefault();
+
+  const email = $('#signup-email').val().trim();
+  const password = $('#signup-password').val().trim();
+
+  if (email && password) {
+    const response = await fetch('./api/accounts', {
+      method: 'POST',
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    if (response.ok) {
+      document.location.replace('/myprofile')
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
