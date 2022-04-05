@@ -27,7 +27,7 @@ async function logIn(e) {
 
 $('#signup-button').click(signUp);
 
-async function singUp(e) {
+async function signUp(e) {
   e.preventDefault();
 
   const email = $('#signup-email').val().trim();
