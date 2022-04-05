@@ -35,7 +35,7 @@ async function signUp(e) {
 
   if (email && password) {
     const response = await fetch('./api/accounts', {
-      method: 'POST',
+      method: 'POST', 
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
