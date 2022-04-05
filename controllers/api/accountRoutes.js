@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Account } = require('../../models');
+const { Account, User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
@@ -11,6 +11,12 @@ router.post('/', async (req, res) => {
 
       res.status(200).json(accountData);
     });
+
+    User.create({
+      account_id: accountData.id
+    }
+      )
+
   } catch (err) {
     res.status(400).json(err);
   }
