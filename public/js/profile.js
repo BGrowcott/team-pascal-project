@@ -2,5 +2,5 @@
 $("#edit-button").click(function () {
     $(".contact-info").css('display','none');
     $("#contact-input").removeClass("hide");
-};
+});
 
