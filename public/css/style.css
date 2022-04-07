@@ -14,3 +14,7 @@ h1 {
 .forms-container {
     display: flex;
 }
+
+.hide {
+    display: none;
+}
