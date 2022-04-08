@@ -48,6 +48,30 @@ User.init(
         key: 'id',
       },
     },
+    Location: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    Company_name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    Position: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    Mobile_Number: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    email : {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    Work_address : {
+      type: DataTypes.TEXT(200),
+      allowNull: true,
+    },
   },
   {
     sequelize,
