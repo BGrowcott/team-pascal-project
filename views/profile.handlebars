@@ -3,7 +3,27 @@
     <div class='col-md-6'>
       <div class='profile-pic'>
         <h1>{{user.first_name}} {{user.last_name}}</h1>
-        <input type='image' src='' alt='Submit' width='48' height='48' />
+        <img
+          id='profile-pic'
+          type='image'
+          src='https://teampascal.s3.eu-west-2.amazonaws.com/images/{{user.profile_picture}}'
+          alt='profile-picture'
+          width='300px'
+        />
+        <div>
+          <form id='profile-upload'>
+            <div class='form-group'>
+              <label for='file-upload'>Change Profile Picture:</label>
+              <input
+                accept=".jpg,.png"
+                type='file'
+                class='form-control-file'
+                id='file-upload'
+              />
+            </div>
+            <button id="file-submit" type='submit' class='btn btn-primary'>Submit</button>
+          </form>
+        </div>
       </div>
       <div class='contact-info'>
         <h3>Contact info</h3>
@@ -84,8 +104,9 @@
                   <button type='submit' id="save-btn" class='btn btn-primary'>Submit</button>
                   <button type='reset' class='btn btn-default'>Cancel</button>
                 </div>
+
           </div>
-          
+
         </form>
       </div>
     </div>
@@ -122,5 +143,6 @@
   </div>
 </div>
 
+<script src="./js/aws.js"></script>
 <script src='./js/logout.js'></script>
-<script src="./js/profile.js"></script>
+<script src='./js/profile.js'></script>

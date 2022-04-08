@@ -25,6 +25,8 @@ async function logIn(e) {
   }
 }
 
+
+// signs a user up - logs them in and redirects to the profile page
 $('#signup-button').click(signUp);
 
 async function signUp(e) {

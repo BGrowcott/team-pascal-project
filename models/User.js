@@ -28,6 +28,11 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    profile_picture: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: 'https://bootdey.com/img/Content/avatar/avatar6.png'
+    },
     account_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -37,6 +42,7 @@ User.init(
     },
     following: {
       type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
         model: 'user',
         key: 'id',
