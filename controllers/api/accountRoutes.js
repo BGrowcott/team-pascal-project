@@ -36,9 +36,15 @@ router.post('/login', async (req, res) => {
       return;
     }
 
+    const userData = await User.findOne({
+      where: { account_id: accountData.id },
+    });
+
+    console.log(accountData)
     req.session.save(() => {
       req.session.account_id = accountData.id;
       req.session.logged_in = true;
+      req.session.user_id = userData.id
 
       res.json({ account: accountData, message: 'You are now logged in!' });
     });

@@ -12,6 +12,7 @@
         "last_name": "Growcott",
         "bio": "aspiring web-developer, likes football",
         "profession": "customer service",
+        "profile_picture": "https://teampascal.s3.eu-west-2.amazonaws.com/images/IMG-2174+(1).jpg",
         "account_id": 2,
         "following": [1]
     }

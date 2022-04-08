@@ -2,10 +2,6 @@ body {
     padding: 0px 5px;
 }
 
-h1 {
-    text-align: center;
-}
-
 .form-container {
     width: 45%;
     margin: auto;
@@ -17,4 +13,9 @@ h1 {
 
 .hide {
     display: none;
+}
+
+#profile-upload{
+    display: flex;
+    flex-direction: column;
 }
