@@ -120,7 +120,7 @@
   <div class='row'>
     <div class='col-md-6'>
       {{#each user.forums as |forum|}}
-        <p>{{forum.title}}</p>
+        <p><a href="/forums/{{forum.id}}">{{forum.title}}</a></p>
       {{/each}}
     </div>
     <div class='col-md-6'>

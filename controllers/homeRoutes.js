@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { User, Forum } = require('../models');
+const { User, Forum, Comment } = require('../models');
 
 // This page controls what is displayed when the user navigates the site
 // e.g /profile/:id will display the profile of the user with ":id"
@@ -38,7 +38,8 @@ router.get('/profile/:id', withAuth, async (req, res) => {
     res.render('profile', {
       user,
       logged_in: req.session.logged_in, 
-      accountId: req.session.account_id
+      accountId: req.session.account_id,
+      user_id: req.session.user_id
     });
   } catch (err) {
     res.status(500).json(err);
@@ -64,7 +65,8 @@ router.get(`/myprofile`, withAuth, async (req, res) => {
     res.render('profile', {
       user,
       logged_in: req.session.logged_in, 
-      accountId: req.session.account_id
+      accountId: req.session.account_id,
+      user_id: req.session.user_id
     });
   } catch (err) {
     res.status(500).json(err);
@@ -82,9 +84,39 @@ router.get('/forums', async (req, res) => {
     res.render('forums', {
       forums,
       logged_in: req.session.logged_in, 
-      accountId: req.session.account_id
+      accountId: req.session.account_id,
+      user_id: req.session.user_id
     });
   } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/forums/:id', async (req, res) => {
+  const id = req.params.id
+  try {
+
+    const forumData = await Forum.findByPk(id, {
+      where: {id: id},
+      include: [
+        {
+          model: Comment,
+          include: [{model: User}],
+        },
+        {
+          model: User,
+        }
+      ]
+    });
+    const forum = forumData.get({ plain: true });
+    res.render('forum', {
+      forum,
+      logged_in: req.session.logged_in, 
+      accountId: req.session.account_id,
+      user_id: req.session.user_id
+    });
+  } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });

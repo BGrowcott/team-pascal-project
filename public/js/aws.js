@@ -31,7 +31,7 @@ async function addPhoto(e) {
     });
     if (response.ok) {
       setTimeout(() => {
-        // location.replace('/myprofile');
+        location.replace('/myprofile');
       }, 200);
     } else {
       alert(response.statusText);

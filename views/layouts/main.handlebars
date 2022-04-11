@@ -45,7 +45,7 @@
   </head>
   <body>
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
-      <a class='navbar-brand' href='/'>Home</a>
+      <a class='navbar-brand' href='/myprofile'>My Profile</a>
       <button
         class='navbar-toggler'
         type='button'
@@ -60,18 +60,18 @@
 
       <div class='collapse navbar-collapse' id='navbarSupportedContent'>
         <ul class='navbar-nav mr-auto'>
-          <li class='nav-item active'>
-            <a class='nav-link' href='/myprofile/'>My Profile</a>
-          </li>
           <li class='nav-item'>
             <a class='nav-link' href='/forums'>Forums</a>
           </li>
+          {{#if logged_in}}
+          <li class='nav-item'>
+            <button id='logout-button' class='btn btn-secondary'>Log Out</button>
+          </li>
+          {{/if}}
         </ul>
       </div>
     </nav>
-    {{#if logged_in}}
-      <button id='logout-button' class='btn btn-secondary'>Log Out</button>
-    {{/if}}
+
     {{! Body defines where other pages will go }}
     {{{body}}}
 
