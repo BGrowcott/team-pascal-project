@@ -49,7 +49,7 @@ User.init(
       },
     },
     Location: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     Company_name: {
@@ -61,15 +61,15 @@ User.init(
       allowNull: true,
     },
     Mobile_Number: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     email : {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     Work_address : {
-      type: DataTypes.TEXT(200),
+      type: DataTypes.STRING(200),
       allowNull: true,
     },
   },

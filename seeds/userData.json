@@ -7,7 +7,7 @@
         "account_id": 1,
         "following": [2],
         "Location": [],
-        "Mobile_Number": 2312434124
+        "Mobile_Number": "2312434124"
     },
     {
         "first_name": "Ben",
@@ -18,6 +18,6 @@
         "account_id": 2,
         "following": [1],
         "Company_name": "Ace Design",
-        "Mobile_Number": 2312434234
+        "Mobile_Number": "2312434234"
     }
 ]
