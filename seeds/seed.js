@@ -1,9 +1,10 @@
 const userData = require('./userData.json');
-const { User, Forum, Comment, Account } = require('../models');
+const { User, Forum, Comment, Account, Follow } = require('../models');
 const sequelize = require('../config/connection');
 const accountData = require('./accountdata.json');
 const forumData = require('./forumData.json');
 const commentData = require('./commentdata.json');
+const followData = require('./followdata.json');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -29,6 +30,12 @@ const seedAll = async () => {
   for (const comment of commentData) {
     await Comment.create({
       ...comment,
+    });
+  }
+
+  for (const follow of followData) {
+    await Follow.create({
+      ...follow,
     });
   }
 
