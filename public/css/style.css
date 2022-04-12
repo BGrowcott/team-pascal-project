@@ -59,7 +59,11 @@ body {
     width: 100vw;
     overflow: hidden;
 }
-
+#navbarb{
+justify-items: center;
+justify-content: space-between;
+margin-left: 2rem;
+}
 nav-item {
     display: flex;
 }
@@ -68,11 +72,13 @@ nav-item {
     color: #0d6efe;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.25rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:0.3125rem;
+    padding-bottom:.3125rem
+
 }
 
-#navbitem{
-    
-}
 #logout-button {
     background-color: aquamarine;
     color:#0d6efe;
