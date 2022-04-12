@@ -28,6 +28,11 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    profile_picture: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: 'https://bootdey.com/img/Content/avatar/avatar6.png'
+    },
     account_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -35,14 +40,7 @@ User.init(
         key: 'id',
       },
     },
-    following: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-    location: {
+    Location: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -55,7 +53,7 @@ User.init(
       allowNull: true,
     },
     mobile_number: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     email : {

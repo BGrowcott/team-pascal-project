@@ -5,18 +5,17 @@
         "bio": "aspiring web-developer, likes traveling",
         "profession": "unemployed",
         "account_id": 1,
-        "following": [2],
         "Location": [],
-        "Mobile_Number": 2312434124
+        "Mobile_Number": "2312434124"
     },
     {
         "first_name": "Ben",
         "last_name": "Growcott",
         "bio": "aspiring web-developer, likes football",
         "profession": "customer service",
+        "profile_picture": "https://teampascal.s3.eu-west-2.amazonaws.com/images/IMG-2174+(1).jpg",
         "account_id": 2,
-        "following": [1],
         "Company_name": "Ace Design",
-        "Mobile_Number": 2312434234
+        "Mobile_Number": "2312434234"
     }
 ]

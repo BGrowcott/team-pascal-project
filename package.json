@@ -19,12 +19,16 @@
   },
   "homepage": "https://github.com/BGrowcott/team-pascal-project#readme",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.67.0",
+    "aws-sdk": "^2.1111.0",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.3",
     "express-session": "^1.17.2",
+    "just-handlebars-helpers": "^1.0.19",
+    "moment": "^2.29.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
   },

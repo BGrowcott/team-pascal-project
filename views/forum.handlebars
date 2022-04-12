@@ -1,0 +1,23 @@
+<div id='forum-container'>
+  <div id='forum-body'>
+    <h1>{{forum.title}}</h1>
+    <p>By 
+      <a href="/profile/{{forum.user.id}}">
+      <img class="tiny-pic" src="{{forum.user.profile_picture}}" alt="">
+       {{forum.user.first_name}}
+       {{forum.user.last_name}}
+      </a>
+      on
+      {{format_date forum.date_created}}</p>
+    <p>{{forum.content}}</p>
+  </div>
+  <div id="all-comments">
+  <h2>Comments:</h2>
+  {{#each forum.comments as |comment|}}
+    <div class='comment-container'>
+      <p>{{comment.content}}</p>
+      <p><a href="/profile/{{comment.user.id}}">{{comment.user.first_name}} {{comment.user.last_name}}</a></p>
+    </div>
+  {{/each}}
+  </div>
+</div>

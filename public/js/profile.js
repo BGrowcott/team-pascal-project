@@ -20,12 +20,12 @@ async function saveInput(e) {
     const response = await fetch('/homeRoutes/profile', {
       method: 'POST',
       body: JSON.stringify({
-        location: location,
+        Location: location,
         company_name: companyName,
         position: position,
         mobile_number: phoneNumber,
         email: email,
-        work_address: address,
+        work_address: address
       }),
       headers: { 'Content-Type': 'application/json' },
     });
@@ -35,5 +35,22 @@ async function saveInput(e) {
       alert(response.statusText);
     }
     console.log(response);
+  }
+}
+
+$('#follow-user').click(addToFollowing);
+async function addToFollowing(e) {
+  const userId = e.target.dataset.id;
+  const response = await fetch('/api/users/follow', {
+    method: 'POST',
+    body: JSON.stringify({ user_follow: userId }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    setTimeout(() => {
+      document.location.replace(`/myprofile`);
+    }, 200);
+  } else {
+    alert(response.statusText);
   }
 }
