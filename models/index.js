@@ -14,6 +14,7 @@ User.hasMany(Forum, {
   onDelete: 'CASCADE'
 });
 
+
 Forum.belongsTo(User, {
   foreignKey: 'user_id'
 });
@@ -44,9 +45,7 @@ User.belongsToMany(User, {
   as: 'followed_users',
 })
 
-Forum.belongsToMany(User, {
-  through: Follow,
-  as: 'following_forums',
+Follow.belongsTo(Forum, {
   foreignKey: 'forum_follow'
 })
 
