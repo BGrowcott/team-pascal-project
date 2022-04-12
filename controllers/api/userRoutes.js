@@ -1,23 +1,15 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Follow } = require('../../models');
 var AWS = require('aws-sdk');
+const withAuth = require('../../utils/auth');
 
 //
 // Data constructs and initialization.
 //
-
-// **DO THIS**:
-//   Replace BUCKET_NAME with the bucket name.
-//
-
 var albumBucketName = process.env.ALBUMBUCKETNAME;
 var bucketRegion = process.env.BUCKETREGION;
 var IdentityPoolId = process.env.IDENTITYPOOLID;
 
-// **DO THIS**:
-//   Replace this block of code with the sample code located at:
-//   Cognito -- Manage Identity Pools -- [identity_pool_name] -- Sample Code -- JavaScript
-//
 // Initialize the Amazon Cognito credentials provider
 AWS.config.update({
   region: bucketRegion,
@@ -37,7 +29,7 @@ router.post('/profilepic', async (req, res) => {
     'base64'
   );
   const extn = req.body.extn;
-  
+
   var albumPhotosKey = encodeURIComponent('images') + '/';
 
   var photoKey = albumPhotosKey + req.session.user_id + '.' + extn;
@@ -78,6 +70,28 @@ router.post('/profilepic', async (req, res) => {
       }
     );
     res.status(200).json(newPicture);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+router.post('/follow', withAuth, async (req, res) => {
+  const alreadyFollowed = await Follow.findOne({
+    where: { 
+      ...req.body, 
+      user_id: req.session.user_id 
+    },
+  });
+  if(alreadyFollowed){
+    return
+  }
+  try {
+    await Follow.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+    res.status(200).json('Created new follow');
   } catch (err) {
     console.log(err);
     res.status(400).json(err);

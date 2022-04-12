@@ -3,9 +3,9 @@
     <h1>{{forum.title}}</h1>
     <p>By 
       <a href="/profile/{{forum.user.id}}">
+      <img class="tiny-pic" src="{{forum.user.profile_picture}}" alt="">
        {{forum.user.first_name}}
        {{forum.user.last_name}}
-       <img class="tiny-pic" src="{{forum.user.profile_picture}}" alt="">
       </a>
       on
       {{format_date forum.date_created}}</p>
