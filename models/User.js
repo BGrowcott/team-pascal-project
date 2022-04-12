@@ -62,7 +62,7 @@ User.init(
       allowNull: true,
     },
     mobile_number: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     email : {
