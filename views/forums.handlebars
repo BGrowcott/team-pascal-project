@@ -1,7 +1,10 @@
-<Head>Bootcampers Emporium</Head>
+<Head>
+  <title>Bootcampers Alumni</title>
+  </Head>
 <Body>
+  
  <header class="Header">
-<h1>Forums will go here!!!</h1>
+<h1>List of Available Forums</h1>
 </header> 
 
 {{#each forums as |forum|}}
@@ -9,9 +12,16 @@
     <p>{{forum.content}}</p>
 {{/each}}
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+<btn data-bs-toggle="modal" data-bs-target="#exampleModal">
+<a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+       Create a Forum
+    </a>
+  
+</btn>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -26,7 +36,7 @@
   <label for="forumname">Name your Forum:</label><br>
   <input type="text"  id="forumname" name="fname"><br>
   <label for="forumdetails">Tell us what your Forum is about:</label><br>
-  <textarea id="forumdetails" name="forumdetails"></textarea>
+  <textarea id="forumdetails" name="forumdetails" placeholder="eg. the area of interest, who it is for"></textarea>
 </form>
           
       </div>

@@ -1,4 +1,7 @@
 body {
+    background-image: url("../images/human-circle.svg");
+    height: 100vh;
+    background-size:cover;
     padding: 0px 5px;
 }
 
