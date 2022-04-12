@@ -3,6 +3,10 @@ const { User, Follow } = require('../../models');
 var AWS = require('aws-sdk');
 const withAuth = require('../../utils/auth');
 const { where } = require('sequelize/types');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0d4c3abbf43fe9596cda19a7da70a5aadfc717a9
 
 //
 // Data constructs and initialization.

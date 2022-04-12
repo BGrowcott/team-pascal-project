@@ -40,7 +40,16 @@ User.init(
         key: 'id',
       },
     },
+    following: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+
     Location: {
+
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -53,7 +62,7 @@ User.init(
       allowNull: true,
     },
     mobile_number: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     email : {
