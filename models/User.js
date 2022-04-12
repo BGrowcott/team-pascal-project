@@ -44,15 +44,15 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    Company_name: {
+    company_name: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    Position: {
+    position: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    Mobile_Number: {
+    mobile_number: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -60,7 +60,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    Work_address : {
+    work_address : {
       type: DataTypes.STRING(200),
       allowNull: true,
     },
