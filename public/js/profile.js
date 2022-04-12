@@ -20,12 +20,12 @@ async function saveInput(e) {
     const response = await fetch('/homeRoutes/profile', {
       method: 'POST',
       body: JSON.stringify({
-        location,
-        companyName,
-        position,
-        phoneNumber,
-        email,
-        address,
+        Location: location,
+        company_name: companyName,
+        position: position,
+        mobile_number: phoneNumber,
+        email: email,
+        work_address: address
       }),
       headers: { 'Content-Type': 'application/json' },
     });
@@ -34,16 +34,6 @@ async function saveInput(e) {
     } else {
       alert(response.statusText);
     }
-
-    .then {
-      $('#locat').push(location),
-      $('#company').push(companyName),
-      $('#role').push(position),
-      $('#tel').push(phoneNumber),
-      $('#mail').push(email),
-      $('#adds').push(address)
-    };
-
     console.log(response);
   }
 }

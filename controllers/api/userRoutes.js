@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Follow } = require('../../models');
 var AWS = require('aws-sdk');
 const withAuth = require('../../utils/auth');
+const { where } = require('sequelize/types');
 
 //
 // Data constructs and initialization.
@@ -92,6 +93,30 @@ router.post('/follow', withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
     res.status(200).json('Created new follow');
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+// submit button
+router.put('/save', withAuth, async (req, res) => {
+  const saveNew = await User.update(req.body,
+    {
+      where: {
+        user_id: req.session.user_id,
+      },
+    }
+  );
+  if(saveNew){
+    return
+  }
+  try {
+    await User.update({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+    res.status(200).json('new entries updated');
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
