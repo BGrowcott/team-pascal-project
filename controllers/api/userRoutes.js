@@ -4,6 +4,7 @@ var AWS = require('aws-sdk');
 const withAuth = require('../../utils/auth');
 const { where } = require('sequelize/types');
 
+
 //
 // Data constructs and initialization.
 //
@@ -98,6 +99,7 @@ router.post('/follow', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
 
 // submit button
 router.put('/save', withAuth, async (req, res) => {

@@ -2,10 +2,6 @@ body {
     padding: 0px 5px;
 }
 
-h1 {
-    text-align: center;
-}
-
 .form-container {
     width: 45%;
     margin: auto;
@@ -17,4 +13,41 @@ h1 {
 
 .hide {
     display: none;
+}
+
+#profile-upload{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+#forum-container {
+    border: 2px solid black
+}
+
+.comment-container{
+    border: 2px solid grey;
+}
+
+.tiny-pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#pic-container{
+    max-width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.following-item{
+    display: flex;
+    align-items: center;
 }

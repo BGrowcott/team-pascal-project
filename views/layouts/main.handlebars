@@ -6,6 +6,7 @@
     <!-- CSS -->
     <link rel='stylesheet' href='/css/reset.css' />
     <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href='/css/forum.css' />
     <link
       rel='stylesheet'
       href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css'
@@ -20,6 +21,7 @@
       crossorigin='anonymous'
     />
     {{! Scripts here }}
+    <script src='https://sdk.amazonaws.com/js/aws-sdk-2.1106.0.min.js'></script>
     <script
       src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
       integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
@@ -43,7 +45,7 @@
   </head>
   <body>
     <nav class='navbar navbar-expand-lg navbar-light bg-light'>
-      <a class='navbar-brand' href='/'>Home</a>
+      <a class='navbar-brand' href='/myprofile'>My Profile</a>
       <button
         class='navbar-toggler'
         type='button'
@@ -58,18 +60,20 @@
 
       <div class='collapse navbar-collapse' id='navbarSupportedContent'>
         <ul class='navbar-nav mr-auto'>
-          <li class='nav-item active'>
-            <a class='nav-link' href='/myprofile/'>My Profile</a>
-          </li>
           <li class='nav-item'>
             <a class='nav-link' href='/forums'>Forums</a>
           </li>
+          {{#if logged_in}}
+          <li class='nav-item'>
+            <p class="nav">Welcome {{name}}</p>
+          </li>
+          <li class='nav-item'>
+            <button id='logout-button' class='btn btn-secondary'>Log Out</button>
+          </li>
+          {{/if}}
         </ul>
       </div>
     </nav>
-    {{#if logged_in}}
-      <button id='logout-button' class='btn btn-secondary'>Log Out</button>
-    {{/if}}
     {{! Body defines where other pages will go }}
     {{{body}}}
 

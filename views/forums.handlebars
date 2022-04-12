@@ -1,8 +1,46 @@
+<Head>Bootcampers Emporium</Head>
+<Body>
+ <header class="Header">
 <h1>Forums will go here!!!</h1>
+</header> 
 
 {{#each forums as |forum|}}
-    <h2>{{forum.title}}</h2>
+    <h2><a href="/forums/{{forum.id}}">{{forum.title}}</a></h2>
     <p>{{forum.content}}</p>
 {{/each}}
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a Forum</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+<form>
+  <label for="forumname">Name your Forum:</label><br>
+  <input type="text"  id="forumname" name="fname"><br>
+  <label for="forumdetails">Tell us what your Forum is about:</label><br>
+  <textarea id="forumdetails" name="forumdetails"></textarea>
+</form>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="closebtn" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="savebtn">Save changes</button>
+     
+      </div>
+    </div>
+  </div>
+ 
+
+</div>
+<footer><h6>Back to the top</h6></footer>
+</Body>
 <script src='./js/logout.js'></script>
+<script src='./js/forum.js'></script>
