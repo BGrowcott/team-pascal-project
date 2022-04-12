@@ -29,4 +29,12 @@ async function saveInput(e) {
         }
         console.log(response)
     }
+    .then {
+      $('#locat').push(location),
+      $('#company').push(companyName),
+      $('#role').push(position),
+      $('#tel').push(phoneNumber),
+      $('#mail').push(email),
+      $('#adds').push(address)
+    };
 }

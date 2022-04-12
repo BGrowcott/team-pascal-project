@@ -42,28 +42,28 @@ User.init(
         key: 'id',
       },
     },
-    Location: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
-    Company_name: {
+    location: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    Position: {
+    company_name: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    Mobile_Number: {
+    position: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    mobile_number: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
     email : {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true,
     },
-    Work_address : {
-      type: DataTypes.TEXT(200),
+    work_address : {
+      type: DataTypes.STRING(200),
       allowNull: true,
     },
   },
