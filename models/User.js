@@ -40,16 +40,7 @@ User.init(
         key: 'id',
       },
     },
-    following: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-
     Location: {
-
       type: DataTypes.STRING,
       allowNull: true,
     },
