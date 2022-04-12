@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
-const { User, Forum, Comment } = require('../models');
+const { User, Forum, Comment, Follow } = require('../models');
 
 // This page controls what is displayed when the user navigates the site
 // e.g /profile/:id will display the profile of the user with ":id"
@@ -19,10 +19,14 @@ router.get('/', async (req, res) => {
     }
 });
 
-//Profile page
+//Profile page for another user
 router.get('/profile/:id', withAuth, async (req, res) => {
 
   const id = req.params.id
+  if (id == req.session.user_id){
+    res.redirect('/myprofile')
+    return
+  }
   try {
 
     const userData = await User.findByPk(id, {
@@ -30,6 +34,10 @@ router.get('/profile/:id', withAuth, async (req, res) => {
       include: [
         {
           model: Forum,
+        },
+        {
+          model: Follow,
+          include: [{model: User}]
         }
       ]
     });
@@ -39,9 +47,11 @@ router.get('/profile/:id', withAuth, async (req, res) => {
       user,
       logged_in: req.session.logged_in, 
       accountId: req.session.account_id,
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
+      name: req.session.name
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -57,6 +67,10 @@ router.get(`/myprofile`, withAuth, async (req, res) => {
       include: [
         {
           model: Forum,
+        },
+        {
+          model: Follow,
+          include: [{model: User}]
         }
       ]
     });
@@ -66,9 +80,11 @@ router.get(`/myprofile`, withAuth, async (req, res) => {
       user,
       logged_in: req.session.logged_in, 
       accountId: req.session.account_id,
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
+      name: req.session.name
     });
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
@@ -85,13 +101,14 @@ router.get('/forums', async (req, res) => {
       forums,
       logged_in: req.session.logged_in, 
       accountId: req.session.account_id,
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
+      name: req.session.name
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
+// Page for a particular forum
 router.get('/forums/:id', async (req, res) => {
   const id = req.params.id
   try {
@@ -113,7 +130,8 @@ router.get('/forums/:id', async (req, res) => {
       forum,
       logged_in: req.session.logged_in, 
       accountId: req.session.account_id,
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
+      name: req.session.name
     });
   } catch (err) {
     console.log(err)

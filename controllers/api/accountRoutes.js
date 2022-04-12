@@ -12,17 +12,15 @@ router.post('/', async (req, res) => {
     req.session.save(() => {
       req.session.account_id = accountData.id;
       req.session.logged_in = true;
-      req.session.user_id = userData.id
+      req.session.user_id = userData.id;
       res.status(200).json(accountData);
     });
-
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
 router.post('/login', async (req, res) => {
-  console.log('test');
   try {
     const accountData = await Account.findOne({
       where: { email: req.body.email },
@@ -40,14 +38,15 @@ router.post('/login', async (req, res) => {
       where: { account_id: accountData.id },
     });
 
-    console.log(accountData)
+    console.log(userData);
     req.session.save(() => {
       req.session.account_id = accountData.id;
       req.session.logged_in = true;
-      req.session.user_id = userData.id
-
+      req.session.user_id = userData.id;
+      req.session.name = userData.first_name;
       res.json({ account: accountData, message: 'You are now logged in!' });
     });
+    console.log(req.session)
   } catch (err) {
     res.status(400).json(err);
   }

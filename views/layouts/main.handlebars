@@ -65,13 +65,15 @@
           </li>
           {{#if logged_in}}
           <li class='nav-item'>
+            <p class="nav">Welcome {{name}}</p>
+          </li>
+          <li class='nav-item'>
             <button id='logout-button' class='btn btn-secondary'>Log Out</button>
           </li>
           {{/if}}
         </ul>
       </div>
     </nav>
-
     {{! Body defines where other pages will go }}
     {{{body}}}
 
