@@ -1,8 +1,7 @@
 body {
-    background-image: url("../images/human-circle.svg");
     height: 100vh;
     background-size:cover;
-    padding: 0px 5px;
+    padding: 0px 0px;
 }
 
 .form-container {
@@ -54,3 +53,35 @@ body {
     display: flex;
     align-items: center;
 }
+
+.navbar{
+    background-color: rgb(241, 221, 221);
+    width: 100vw;
+    overflow: hidden;
+}
+
+nav-item {
+    display: flex;
+}
+
+#navblink {
+    color: #0d6efe;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.25rem;
+}
+
+#navbitem{
+    
+}
+#logout-button {
+    background-color: aquamarine;
+    color:#0d6efe;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.25rem;
+    height: 40px;
+    width: 170px;
+    margin-left: 95%;
+}
+
+
+/*background-image: url("../images/human-circle.svg");

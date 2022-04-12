@@ -44,7 +44,7 @@
     <title>Team Pascal</title>
   </head>
   <body>
-    <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+    <nav class='navbar navbar-expand-lg'>
       <a class='navbar-brand' href='/myprofile'>My Profile</a>
       <button
         class='navbar-toggler'
@@ -59,16 +59,17 @@
       </button>
 
       <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-        <ul class='navbar-nav mr-auto'>
+        <ul class='navbar-nav'>
           <li class='nav-item'>
-            <a class='nav-link' href='/forums'>Forums</a>
+            <a class='nav-link' id='navblink' href='/forums'>Forums</a>
           </li>
+          <li class='nav-item'>
+            <a class='btn btn-secondary' id='logout-button'>Log Out</a>
+          </li>
+
           {{#if logged_in}}
           <li class='nav-item'>
             <p class="nav">Welcome {{name}}</p>
-          </li>
-          <li class='nav-item'>
-            <button id='logout-button' class='btn btn-secondary'>Log Out</button>
           </li>
           {{/if}}
         </ul>
