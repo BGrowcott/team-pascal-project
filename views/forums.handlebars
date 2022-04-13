@@ -8,8 +8,10 @@
 </header> 
 
 {{#each forums as |forum|}}
+    <div class="forum-container">
     <h2><a href="/forums/{{forum.id}}">{{forum.title}}</a></h2>
     <p>{{forum.content}}</p>
+    </div>
 {{/each}}
 <!-- Button trigger modal -->
 <btn data-bs-toggle="modal" data-bs-target="#exampleModal">

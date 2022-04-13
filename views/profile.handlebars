@@ -1,6 +1,7 @@
 <div class='container'>
+
   <div class='row'>
-    <div class='col-md-6'>
+    <div class='col col-md-6'>
       <div class='profile-pic'>
         <h1>{{user.first_name}} {{user.last_name}}</h1>
         {{#if (eq user_id user.id)}}{{else}}
@@ -32,23 +33,25 @@
           </div>
         {{/if}}
       </div>
-    
+
       <div class='contact-info'>
+        <h3>Work</h3>
+        <ul>
+          <li id='locat'>Location: {{user.Location}}</li>
+          <li id='company'>Company Name: {{user.company_name}}</li>
+          <li id='role'>Position: {{user.position}}</li>
+        </ul>
         <h3>Contact info</h3>
-        <p id="locat">Location: </p>
-        <p id="company">Company Name: </p>
-        <p id="role">Position: </p>
-        <p id="tel">Phone Number:</p>
-        <p id="mail">email - clickable icon link</p>
-        <p id="adds">Work Address:</p>
+        <ul>
+          <li id='tel'>Phone Number: {{user.mobile_number}}</li>
+          <li id='mail'><a href="mailto:{{user.email}}">{{user.email}}</a></li>
+          <li><img src="./images/github (1).png" alt=""><img src="./images/slack-logo.png" alt=""><img src="./images/linkedin.png" alt=""></li>
+        </ul>
         <button
           type='button'
           id='edit-button'
           class='btn btn-secondary btn-sm'
         >Edit Profile</button>
-        <p>Github - clickable icon link</p>
-        <p>Slack - clickable icon link</p>
-        <p>Linked-in - clickable icon link</p>
       </div>
       <div id='contact-input' class='hide'>
         <form class='form-horizontal'>
@@ -85,7 +88,7 @@
                 </div>
               </div>
             </div>
-        
+          </div>
 
           <div class='panel panel-default'>
             <div class='panel-heading'>
@@ -133,49 +136,32 @@
                 id='save-btn'
                 class='btn btn-primary'
               >Submit</button>
-              <button type='reset' class='btn btn-default'>Cancel</button>
+              <button
+                type='reset'
+                id='cancel-edit'
+                class='btn btn-default'
+              >Cancel</button>
             </div>
           </div>
         </form>
       </div>
     </div>
-    
-    <div class='col-md-6'>
+
+    <div class='col col-md-6'>
       <div class='bio'>
         <h3>BIO</h3>
         <p>{{user.bio}}</p>
       </div>
+      <div>
+        <h4>My Forums</h4>
+        <ul>
+          {{#each user.forums as |forum|}}
+            <li><a href='/forums/{{forum.id}}'>{{forum.title}}</a></li>
+            {{/each}}
+        </ul>
+      </div>
     </div>
   </div>
-
-  <div class='row'>
-    <div class='col-md-6'>
-      <h4>My Forums</h4>
-      <ul>
-        {{#each user.forums as |forum|}}
-          <li><a href='/forums/{{forum.id}}'>{{forum.title}}</a></li>
-        {{/each}}
-      </ul>
-    </div>
-    <div class='col-md-6'>
-      <h3>Level of skill</h3>
-      <form>
-        <label for='javascript' class='form-label'>JavaScript</label>
-        <input
-          type='range'
-          class='form-range'
-          min='0'
-          max='5'
-          id='javascript'
-        />
-        <label for='heroku' class='form-label'>Heroku</label>
-        <input type='range' class='form-range' min='0' max='5' id='heroku' />
-        <label for='mysql' class='form-label'>Mysql</label>
-        <input type='range' class='form-range' min='0' max='5' id='mysql' />
-      </form>
-    </div>
-  </div>
-</div>
 
 <div>
   <h3>Following:</h3>
@@ -185,8 +171,8 @@
             class='tiny-pic'
             style='background-image: url({{following.user.profile_picture}});'
           ></div>
-          <span>{{following.user.first_name}}
-            {{following.user.last_name}}</span></a></li>
+          <p>{{following.user.first_name}}
+            {{following.user.last_name}}</p></a></li>
     {{/each}}
   </ul>
   <h3>Following Forums:</h3>
@@ -205,4 +191,3 @@
   <script src='../js/logout.js'></script>
   <script src='../js/profile.js'></script>
 {{/if}}
-
