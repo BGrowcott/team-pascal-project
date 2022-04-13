@@ -7,6 +7,7 @@
     <link rel='stylesheet' href='/css/reset.css' />
     <link rel='stylesheet' href='/css/style.css' />
     <link rel='stylesheet' href='/css/forum.css' />
+    <link rel='stylesheet' href='/css/profile.css' />
     <link
       rel='stylesheet'
       href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css'
@@ -44,7 +45,7 @@
     <title>Team Pascal</title>
   </head>
   <body>
-    <nav class='navbar navbar-expand-lg'>
+    <nav class='navbar navbar-expand-lg' #id="navbarx">
       <a class='navbar-brand' id="navbarb" href='/myprofile'>My Profile</a>
       <button
         class='navbar-toggler'
@@ -75,8 +76,9 @@
         </ul>
       </div>
     </nav>
+    <div class="contentdiv" id="contentbdiv">
     {{! Body defines where other pages will go }}
     {{{body}}}
-
+   </div>
   </body>
 </html>

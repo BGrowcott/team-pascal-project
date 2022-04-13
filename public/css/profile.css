@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+}
+
+.profile-pic {
+    background-color: aliceblue;
+    border: 4px solid blue;
+    padding:15px 25%;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+

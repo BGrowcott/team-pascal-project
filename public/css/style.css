@@ -56,18 +56,38 @@ body {
 
 .navbar{
     background-color: rgb(241, 221, 221);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: row;
     width: 100vw;
+    height: 70px;
     overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0,0, 5green, blue, alpha)
+    
 }
 #navbarb{
 justify-items: center;
 justify-content: space-between;
 margin-left: 2rem;
 }
-nav-item {
+nav {
     display: flex;
 }
 
+#contentbdiv {
+display: flex;
+justify-content: right;
+list-style: none;
+margin: 0;
+margin-right: 15%
+}
+
+#navbarx{
+
+}
 #navblink {
     color: #0d6efe;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
