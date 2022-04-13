@@ -159,6 +159,16 @@
             <li><a href='/forums/{{forum.id}}'>{{forum.title}}</a></li>
             {{/each}}
         </ul>
+        <h4>Following Forums:</h4>
+        <ul>
+          {{#each user.follows as |following|}}
+            <li class='following-item'>
+              <a href='/profile/{{following.forum.id}}'>
+                {{following.forum.title}}
+              </a>
+             </li>
+           {{/each}}
+        </ul>
       </div>
     </div>
   </div>
@@ -173,13 +183,6 @@
           ></div>
           <p>{{following.user.first_name}}
             {{following.user.last_name}}</p></a></li>
-    {{/each}}
-  </ul>
-  <h3>Following Forums:</h3>
-    <ul>
-    {{#each user.follows as |following|}}
-      <li class='following-item'><a href='/profile/{{following.forum.id}}'>
-          <span>{{following.forum.title}}</span></a></li>
     {{/each}}
   </ul>
 </div>
