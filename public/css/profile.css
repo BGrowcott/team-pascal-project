@@ -1,13 +1,67 @@
 h1 {
     text-align: center;
 }
+.flexcontainer{
+    height:100vh;
+    width: 100vw;
+    display:flex;
+    flex-wrap: wrap;
+    border: 4px solid red;
+    background-color: yellow;
+    flex-basis: 100%;
+    flex-direction: row;
+    justify-content: center;
 
+}
 .profile-pic {
     background-color: aliceblue;
     border: 4px solid blue;
     padding:15px 25%;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 
 }
+
+.contact-info {
+    background-color: rgb(224, 247, 226);
+    border: 4px solid blue;
+    padding:15px 25%;
+    display: flex;
+    flex-wrap: wrap; 
+    margin-bottom: 10px;
+
+}
+
+.bio {
+    background-color: rgb(240, 198, 210);
+    border: 4px solid blue;
+    padding:15px 25%;
+    display: flex;
+    flex-wrap: wrap;
+    width:518px;
+    margin-bottom: 10px;
+}
+
+#forumOwned{
+    background-color: rgb(245, 247, 249);
+    border: 4px solid blue;
+    padding:15px 25%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 12px;
+    margin-bottom: 10px;
+}
+
+.following {
+    background-color: rgb(245, 247, 249);
+    border: 4px solid blue;
+    padding:15px 25%;
+    display: flex;
+    flex-wrap: wrap;   
+    width: 516px;
+    margin-bottom: 10px;
+}
+
+
 

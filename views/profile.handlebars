@@ -1,3 +1,4 @@
+<div class="flexcontainer">
 <div class='container'>
   <div class='row'>
     <div class='col-md-6'>
@@ -149,7 +150,7 @@
   </div>
 
   <div class='row'>
-    <div class='col-md-6'>
+    <div class='col-md-6' id="forumOwned">
       <h4>My Forums</h4>
       <ul>
       {{#each user.forums as |forum|}}
@@ -158,8 +159,8 @@
       </ul>
     </div>
     <div class='col-md-6'>
-      <h3>Level of skill</h3>
-      <form>
+      <!-- <h3>Level of skill</h3>
+     <form>
         <label for='javascript' class='form-label'>JavaScript</label>
         <input
           type='range'
@@ -172,12 +173,12 @@
         <input type='range' class='form-range' min='0' max='5' id='heroku' />
         <label for='mysql' class='form-label'>Mysql</label>
         <input type='range' class='form-range' min='0' max='5' id='mysql' />
-      </form>
+      </form>-->
     </div>
   </div>
 </div>
 
-<div>
+<div class="following">
   <h3>Following:</h3>
   <ul>
     {{#each user.follows as |following|}}
@@ -190,7 +191,7 @@
     {{/each}}
   </ul>
 </div>
-
+</div>
 {{#if (eq user_id user.id)}}
   <script src='./js/aws.js'></script>
   <script src='./js/logout.js'></script>
