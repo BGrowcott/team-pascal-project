@@ -11,6 +11,7 @@
       {{format_date forum.date_created}}</p>
     <p>{{forum.content}}</p>
   </div>
+  <button data-id="{{forum.id}}" id="follow-forum">Follow This Forum +</button>
   <div id="all-comments">
   <h2>Comments:</h2>
   {{#each forum.comments as |comment|}}
@@ -21,3 +22,6 @@
   {{/each}}
   </div>
 </div>
+
+<script src='./js/forum.js'></script>
+<script src='../js/forum.js'></script>

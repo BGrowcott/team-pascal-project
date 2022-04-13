@@ -24,3 +24,24 @@ async function saveForum(e) {
     }
   }
 }
+
+
+// for single forum page
+
+$('#follow-forum').click(followForum)
+
+async function followForum(e) {
+  const forumId = e.target.dataset.id;
+  const response = await fetch('/api/forums/follow', {
+    method: 'POST',
+    body: JSON.stringify({ forum_follow: forumId }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    setTimeout(() => {
+      // document.location.replace(`/myprofile`);
+    }, 200);
+  } else {
+    alert(response.statusText);
+  }
+}

@@ -70,12 +70,13 @@ router.get(`/myprofile`, withAuth, async (req, res) => {
         },
         {
           model: Follow,
-          include: [{model: User}]
+          include: [{model: User}, {model:Forum}]
         }
       ]
     });
 
     const user = userData.get({ plain: true });
+    console.log(user)
     res.render('profile', {
       user,
       logged_in: req.session.logged_in, 
