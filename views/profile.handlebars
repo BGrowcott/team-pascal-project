@@ -1,6 +1,13 @@
 <div class="flexcontainer">
 <div class='container'>
   <div class='row'>
+
+    <div class='col-md-6'>
+      <div class='bio'>
+        <h3>BIO</h3>
+        <p>{{user.bio}}</p>
+      </div>
+    </div>
     <div class='col-md-6'>
       <div class='profile-pic'>
         <h1>{{user.first_name}} {{user.last_name}}</h1>
@@ -33,20 +40,29 @@
           </div>
         {{/if}}
       </div>
-    
-      <div class='contact-info'>
+    </div>
+      <div class='contact-info' 'col-md-6'>
         <h3>Contact info</h3>
+        <br>
         <p id="locat">Location: </p>
+        <br>
         <p id="company">Company Name: </p>
+        <br>
         <p id="role">Position: </p>
+        <br>
         <p id="tel">Phone Number:</p>
+        <br>
         <p id="mail">email - clickable icon link</p>
+        <br>
         <p id="adds">Work Address:</p>
+        
         <button
           type='button'
           id='edit-button'
           class='btn btn-secondary btn-sm'
         >Edit Profile</button>
+        </div>
+        <div class="clicklinks></div>
         <p>Github - clickable icon link</p>
         <p>Slack - clickable icon link</p>
         <p>Linked-in - clickable icon link</p>
@@ -86,7 +102,7 @@
                 </div>
               </div>
             </div>
-        
+          </div>
 
           <div class='panel panel-default'>
             <div class='panel-heading'>
@@ -139,17 +155,9 @@
           </div>
         </form>
       </div>
-    </div>
-    
-    <div class='col-md-6'>
-      <div class='bio'>
-        <h3>BIO</h3>
-        <p>{{user.bio}}</p>
-      </div>
-    </div>
-  </div>
+   
 
-  <div class='row'>
+ <div class='row'>
     <div class='col-md-6' id="forumOwned">
       <h4>My Forums</h4>
       <ul>
@@ -158,40 +166,21 @@
       {{/each}}
       </ul>
     </div>
-    <div class='col-md-6'>
-      <!-- <h3>Level of skill</h3>
-     <form>
-        <label for='javascript' class='form-label'>JavaScript</label>
-        <input
-          type='range'
-          class='form-range'
-          min='0'
-          max='5'
-          id='javascript'
-        />
-        <label for='heroku' class='form-label'>Heroku</label>
-        <input type='range' class='form-range' min='0' max='5' id='heroku' />
-        <label for='mysql' class='form-label'>Mysql</label>
-        <input type='range' class='form-range' min='0' max='5' id='mysql' />
-      </form>-->
-    </div>
-  </div>
-</div>
 
-<div class="following">
-  <h3>Following:</h3>
-  <ul>
-    {{#each user.follows as |following|}}
+    <div class='col-md-6' class="following" id="forumFollowing">
+      <h4>Following:</h4>
+      <ul>
+      {{#each user.follows as |following|}}
       <li class='following-item'><a href='/profile/{{following.user.id}}'><div
             class='tiny-pic'
             style='background-image: url({{following.user.profile_picture}});'
           ></div>
           <span>{{following.user.first_name}}
             {{following.user.last_name}}</span></a></li>
-    {{/each}}
-  </ul>
+      {{/each}}
+      </ul>
 </div>
-</div>
+
 {{#if (eq user_id user.id)}}
   <script src='./js/aws.js'></script>
   <script src='./js/logout.js'></script>
@@ -201,3 +190,4 @@
   <script src='../js/profile.js'></script>
 {{/if}}
 
+</div>

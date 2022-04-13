@@ -130,4 +130,14 @@ a {
        transition-delay: 0.75s;
   }
   
+  #forum-container{
+      background: whitesmoke;
+      padding:20px;
+  }
+
+  .comment-container:hover{
+      background: burlywood;
+      padding:10px;
+
+  }
   
