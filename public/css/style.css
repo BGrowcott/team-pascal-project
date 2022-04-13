@@ -99,6 +99,10 @@ margin-right: 15%
 
 }
 
+#navtitle {
+    font-size: 27px;
+}
+
 #logout-button {
     background-color: aquamarine;
     color:#0d6efe;

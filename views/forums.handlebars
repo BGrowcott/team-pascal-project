@@ -1,18 +1,21 @@
 <Head>
-  <title>Bootcampers Alumni</title>
+  
   </Head>
 <Body>
-  
- <header class="Header">
+
+<div class="Header"> 
+ <header>
 <h1>List of Available Forums</h1>
 </header> 
-
+</div>
+<div class="ForumDetails">
 {{#each forums as |forum|}}
-    <h2><a href="/forums/{{forum.id}}">{{forum.title}}</a></h2>
-    <p>{{forum.content}}</p>
+    <p><h2 id="forumIdT"><a href="/forums/{{forum.id}}">{{forum.title}}</a></h2></p>
+    <p id="forumContent">{{forum.content}}</p>
 {{/each}}
+</div>
 <!-- Button trigger modal -->
-<btn data-bs-toggle="modal" data-bs-target="#exampleModal">
+<btn data-bs-toggle="modal" data-bs-target="#exampleModal" id="createF">
 <a href="#">
         <span></span>
         <span></span>

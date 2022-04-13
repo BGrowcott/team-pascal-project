@@ -1,0 +1,47 @@
+.forms-container {
+    display:flex;
+    padding: 20px;
+    background: yellow;
+    margin-top: 20%;
+    align-content: center;
+}
+
+
+#fcontainer1{
+background: pink;
+display:flex;
+height:auto;
+padding-right: 10px;
+padding-left: 10px;
+padding-top: 20px;
+padding-bottom: 20px;
+flex-wrap: wrap;
+
+}
+
+
+#fcontainer2 {
+background: whitesmoke;
+display:flex;
+height:auto;
+padding-right:  10px;
+padding-left: 10px;
+padding-top: 20px;
+padding-bottom: 20px;
+flex-wrap: wrap;
+
+}
+
+#signup-password{
+    margin-bottom: 5px;
+}
+
+#loginEm {
+    margin-top:5px ;
+}
+
+.welcome {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 27px;
+    align-content: 50%;
+}

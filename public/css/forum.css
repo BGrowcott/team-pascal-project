@@ -1,3 +1,18 @@
+Head {
+    background: white;
+    height: 30px;
+    width:100vw;
+    
+}
+
+.Header {
+    background: greenyellow;
+    height:fit-content;
+    width:auto;
+    padding:10px;
+    border: 4px solid burlywood 
+
+}
 Body {
     background: url(../images/bryan-garces-zwo-0E7l1ZI-unsplash.jpg) no-repeat center center fixed; 
     -moz-background-size: cover;
@@ -6,12 +21,6 @@ Body {
     -webkit-background-size: cover;
     min-height: 100vh;
   }
-
-
-   /* background-image:url(../../assets/images/ShoppingArcade.jpeg);
-    height: 100vh;
-    background-size: cover;
-}*/
 
 #forumname{
     width:400px;

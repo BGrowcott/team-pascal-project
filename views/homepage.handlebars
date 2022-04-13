@@ -1,12 +1,12 @@
 
-<h1>Welcome</h1>
+<h1 class="welcome">Welcome</h1>
 
 <div class="forms-container">
-<div class="form-container">
+<div class="form-container" id="fcontainer1">
  <form>
    <h2>Log In</h2>
   <div class="form-group">
-    <label for="login-email">Email address</label>
+    <label for="login-email" id="loginEm">Email address</label>
     <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
@@ -18,7 +18,7 @@
  </form>
 </div>
 
-<div class="form-container">
+<div class="form-container" id="fcontainer2">
   <h2>Sign Up</h2>
  <form>
   <div class="form-group">
@@ -38,6 +38,6 @@
  </form>
 </div>
 </div>
-
+<link rel="stylesheet" href="./css/homepage.css">
 <script src='./js/homepage.js'></script>
 <script src='./js/logout.js'></script>
