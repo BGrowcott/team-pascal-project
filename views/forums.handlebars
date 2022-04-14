@@ -3,16 +3,8 @@
   </Head>
 <Body>
   
- <header class="Header">
-<h1>List of Available Forums</h1>
-</header> 
-
-{{#each forums as |forum|}}
-    <div class="forum-container">
-    <h2><a href="/forums/{{forum.id}}">{{forum.title}}</a></h2>
-    <p>{{forum.content}}</p>
-    </div>
-{{/each}}
+ <header class="forum-header">
+<h2>List of Available Forums</h2>
 <!-- Button trigger modal -->
 <btn data-bs-toggle="modal" data-bs-target="#exampleModal">
 <a href="#">
@@ -24,6 +16,23 @@
     </a>
   
 </btn>
+</header> 
+<div class="main-forum-container">
+{{#each forums as |forum|}}
+<div class="card box-styling">
+  <div class="card-header">
+    <a href="/forums/{{forum.id}}">{{forum.title}}</a>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{forum.content}}</p>
+      <footer class="blockquote-footer">{{forum.user.first_name}}<cite title="Source Title"> {{format_date forum.date_created}}</cite></footer>
+    </blockquote>
+  </div>
+</div>
+{{/each}}
+</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

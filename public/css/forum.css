@@ -1,133 +1,135 @@
 Body {
-    background: url(../images/bryan-garces-zwo-0E7l1ZI-unsplash.jpg) no-repeat center center fixed; 
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    -webkit-background-size: cover;
-    min-height: 100vh;
-  }
+  background: url(../images/bryan-garces-zwo-0E7l1ZI-unsplash.jpg) no-repeat
+    center center fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-background-size: cover;
+  min-height: 100vh;
+}
 
-
-   /* background-image:url(../../assets/images/ShoppingArcade.jpeg);
+/* background-image:url(../../assets/images/ShoppingArcade.jpeg);
     height: 100vh;
     background-size: cover;
 }*/
 
-#forumname{
-    width:400px;
-    height:50px;
-    padding:10px;
-    background-color:blanchedalmond;
-
+#forumname {
+  width: 400px;
+  height: 50px;
+  padding: 10px;
+  background-color: blanchedalmond;
 }
-#forumdetails{
-    width:400px;
-    height:300px;
-    padding:10px;
-    background-color:blanchedalmond;
-
+#forumdetails {
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+  background-color: blanchedalmond;
 }
 
-#forumname:hover, #forumdetails:hover{
+#forumname:hover,
+#forumdetails:hover {
   background-color: aquamarine;
 }
 
 .modal-body {
-    margin-left: 10%;
-
-}
-
-btn {
-    margin:0;
-    padding: 0;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 300px;
-    background:#031321;
-
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+  margin-left: 10%;
 }
 a {
-    position:relative;
-    display: inline-block;
-    padding: 15px 30px;
-    color: white;
-    text-transform: uppercase;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    letter-spacing: 4px;
-    text-decoration: none; 
-    font-size: 12px;
-    overflow: hidden;
-    transition: 1s; 
-  }
-  a:hover {
-      color: #255784;
-      background:#2196f3;
-      box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3 0 0 80px #2196f3;
-      transition-delay: .2s;
-  }
-  
-  a span {
-      position: absolute;
-      display: block;
-  }
-  a span:nth-child(1) {
-       top: 0%;
-       left: -100%;
-       width: 100%;
-       height: 2px;
-       background:linear-gradient(90deg,transparent,#2196f3)
-   }
-  
-  a:hover span:nth-child(1) {
-        left:100%;
-        transition: 1s;
-        transition-delay: 0.5s;
-  }
-  
-  
-  a span:nth-child(3) {
-      bottom: 0;
-      right: -100%;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(270deg, transparent, #2196f3);
-  }
-  a:hover span:nth-child(3) {
-       right:100%;
-       transition: 1s;
-       transition-delay: 0.5s;
-  }
-  
-  
-  a span:nth-child(2) {
-      top: -100%;
-      right: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(180deg, transparent, #2196f3);
-  }
-  a:hover span:nth-child(2) {
-       top:100%;
-       transition: 1s;
-       transition-delay: 0.25s;
-  }
-  
-  
-  a span:nth-child(4) {
-      bottom: -100%;
-      left: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(360deg, transparent, #2196f3);
-  }
-  a:hover span:nth-child(4) {
-       bottom:100%;
-       transition: 1s;
-       transition-delay: 0.75s;
-  }
-  
-  
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  overflow: hidden;
+  transition: 1s;
+}
+
+nav a {
+  color: white;
+}
+
+a:hover {
+  color: #0a1a28;
+  background: #69bcff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3 0 0 80px #2196f3;
+  transition-delay: 0.2s;
+}
+
+a span {
+  position: absolute;
+  display: block;
+}
+a span:nth-child(1) {
+  top: 0%;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2196f3);
+}
+
+a:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #2196f3);
+}
+a:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #2196f3);
+}
+a:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #2196f3);
+}
+a:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+
+
+.main-forum-container {
+  width: 90%;
+  margin: auto;
+}
+
+.card {
+  margin-bottom: 10px;
+}
+
+.forum-header {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 90%;
+}

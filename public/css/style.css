@@ -1,6 +1,31 @@
 body {
     height: 100vh;
     background-size:cover;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.826);
+    text-align: center;
+    color: white;
+}
+
+nav div ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px;
+}
+
+#links {
+    display: flex;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 .form-container {
@@ -53,40 +78,46 @@ body {
     align-items: center;
 }
 
-.navbar{
-    background-color: rgb(241, 221, 221);
-    width: 100vw;
-    overflow: hidden;
+.box-styling {
+    background-color: rgba(245, 245, 245, 0.861);
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black inset;
+    margin-bottom: 5px;
+    
 }
-#navbarb{
-justify-items: center;
-justify-content: space-between;
-margin-left: 2rem;
+
+.contact-info a {
+    font-size: 10px;
+    padding: 0px;
 }
-nav-item {
+
+.profile-pic, .contact-info {
+max-width: 316px;
+}
+
+.row {
+    justify-content: space-between;
+}
+
+#forums-container {
     display: flex;
+    justify-content: space-between;
+    text-align: center;
 }
 
-#navblink {
-    color: #0d6efe;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.25rem;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top:0.3125rem;
-    padding-bottom:.3125rem
-
+#user-follow ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5px;
 }
 
-#logout-button {
-    background-color: aquamarine;
-    color:#0d6efe;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.25rem;
-    height: 40px;
-    width: 170px;
-    margin-left: 95%;
+#user-follow ul li {
+    width: 50%;
 }
+
+
 
 
 /*background-image: url("../images/human-circle.svg");
