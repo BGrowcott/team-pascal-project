@@ -4,11 +4,16 @@ $('#edit-button').click(function () {
   $('#contact-input').removeClass('hide');
 });
 
+$('#cancel-edit').click(function () {
+  $('.contact-info').css('display', 'initial');
+  $('#contact-input').addClass('hide');
+});
+
 $('#save-btn').click(saveInput);
 
 async function saveInput(e) {
   e.preventDefault();
-
+  console.log('test')
   const location = $('#location').val();
   const companyName = $('#company-name').val().trim();
   const position = $('#position').val().trim();
@@ -16,25 +21,22 @@ async function saveInput(e) {
   const email = $('#email').val().trim();
   const address = $('#work-adds').val().trim();
 
-  if (location && companyName && position && phoneNumber && email && address) {
-    const response = await fetch('/homeRoutes/profile', {
-      method: 'POST',
-      body: JSON.stringify({
-        Location: location,
-        company_name: companyName,
-        position: position,
-        mobile_number: phoneNumber,
-        email: email,
-        work_address: address
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-    if (response.ok) {
-      document.location.replace(`/myprofile`);
-    } else {
-      alert(response.statusText);
-    }
-    console.log(response);
+  const response = await fetch('/api/users/save', {
+    method: 'PUT',
+    body: JSON.stringify({
+      Location: location,
+      company_name: companyName,
+      position: position,
+      mobile_number: phoneNumber,
+      email: email,
+      work_address: address,
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    document.location.replace(`/myprofile`);
+  } else {
+    alert(response.statusText);
   }
 }
 

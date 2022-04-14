@@ -11,8 +11,10 @@
 <div class="ForumDetails">
   <div>
 {{#each forums as |forum|}}
-    <p><h2 id="forumIdT"><a href="/forums/{{forum.id}}">{{forum.title}}</a></h2></p>
-    <p id="forumContent">{{forum.content}}</p>
+    <div class="forum-container">
+      <p><h2 id="forumIdT"><a href="/forums/{{forum.id}}">{{forum.title}}</a></h2></p>
+      <p id="forumContent">{{forum.content}}</p>
+    </div>
 {{/each}}
 </div>
 </div>
