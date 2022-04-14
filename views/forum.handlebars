@@ -1,28 +1,42 @@
 <div id='forum-container'>
   <div id='forum-body'>
     <h1>{{forum.title}}</h1>
-    <p>By 
-      <a href="/profile/{{forum.user.id}}">
-      <img class="tiny-pic" src="{{forum.user.profile_picture}}" alt="">
-       {{forum.user.first_name}}
-       {{forum.user.last_name}}
+    <p>By
+      <a href='/profile/{{forum.user.id}}'>
+        <img class='tiny-pic' src='{{forum.user.profile_picture}}' alt='' />
+        {{forum.user.first_name}}
+        {{forum.user.last_name}}
       </a>
       on
       {{format_date forum.date_created}}</p>
     <p>{{forum.content}}</p>
   </div>
-  <button data-id="{{forum.id}}" id="follow-forum">Follow This Forum +</button>
-  <div id="all-comments">
-  <h2>Comments:</h2>
-  {{#each forum.comments as |comment|}}
-    <div class='comment-container'>
-      <p>{{comment.content}}</p>
-      <p><a href="/profile/{{comment.user.id}}">{{comment.user.first_name}} {{comment.user.last_name}}</a></p>
+  <button data-id='{{forum.id}}' id='follow-forum'>Follow This Forum +</button>
+  <form class='comment-form'>
+    <div>
+      <textarea class='ml-5' name='comment-body'></textarea>
     </div>
-  {{/each}}
+    <div>
+      <button
+        id='comment-btn'
+        data-id='{{forum.id}}'
+        class='button is-warning ml-5 mb-5'
+        type='submit'
+      >add comment</button>
+    </div>
+  </form>
+  <div id='all-comments'>
+    <h2>Comments:</h2>
+    {{#each forum.comments as |comment|}}
+      <div class='comment-container'>
+        <p>{{comment.content}}</p>
+        <p><a href='/profile/{{comment.user.id}}'>{{comment.user.first_name}}
+            {{comment.user.last_name}}</a></p>
+      </div>
+    {{/each}}
   </div>
 </div>
 
-
+<script src='../js/comment.js'></script>
 <script src='../js/logout.js'></script>
 <script src='../js/forum.js'></script>
