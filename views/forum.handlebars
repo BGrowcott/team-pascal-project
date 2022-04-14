@@ -12,20 +12,31 @@
     <p>{{forum.content}}</p>
   </div>
   <button data-id='{{forum.id}}' id='follow-forum'>Follow This Forum +</button>
+  <form class='comment-form'>
+    <div>
+      <textarea class='ml-5' name='comment-body'></textarea>
+    </div>
+    <div>
+      <button
+        id='comment-btn'
+        data-id='{{forum.id}}'
+        class='button is-warning ml-5 mb-5'
+        type='submit'
+      >add comment</button>
+    </div>
+  </form>
+  <div id='all-comments'>
+    <h2>Comments:</h2>
+    {{#each forum.comments as |comment|}}
+      <div class='comment-container'>
+        <p>{{comment.content}}</p>
+        <p><a href='/profile/{{comment.user.id}}'>{{comment.user.first_name}}
+            {{comment.user.last_name}}</a></p>
+      </div>
+    {{/each}}
+  </div>
 </div>
 
-{{#if loggedIn}}
-    <form class='comment-form'>
-      <div>
-        <textarea class='ml-5' name='comment-body'></textarea>
-      </div>
-
-      <div>
-        <button class='button is-warning ml-5 mb-5' type='submit'>add comment</button>
-      </div>
-
-    </form>
-  {{/if}}
-
+<script src='../js/comment.js'></script>
 <script src='../js/logout.js'></script>
 <script src='../js/forum.js'></script>

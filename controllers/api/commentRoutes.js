@@ -12,18 +12,19 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', withAuth, async (req, res) => {
+  console.log(req.body);
     try {
-        await Comment.create(req.body, {
-          where: {
-            id: req.session.user_id,
-            forum_id: req.session.forum_id,
-            comment_text: req.session.comment_text,
-          },
+        const newComment= await Comment.create({
+            user_id: req.session.user_id,
+            forum_id: req.body.forum_id,
+            content: req.body.content,
         });
     
-        res.status(200).json('new comments created');
+        res.status(200).json(newComment);
       } catch (err) {
         console.log(err);
         res.status(400).json(err);
       }
 });
+
+module.exports = router;
