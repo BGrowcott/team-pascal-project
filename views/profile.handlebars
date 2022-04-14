@@ -1,9 +1,9 @@
 <div class='container'>
 
-  <div class='row'>
-    <div class='col col-md-6'>
-      <div class='profile-pic'>
-        <h1>{{user.first_name}} {{user.last_name}}</h1>
+  <div class='row gx-0'>
+    <div class='col col-md-5'>
+      <div class='profile-pic box-styling'>
+        <h2>{{user.first_name}} {{user.last_name}}</h2>
         {{#if (eq user_id user.id)}}{{else}}
           <button id='follow-user' data-id='{{user.id}}'>Follow +</button>
         {{/if}}
@@ -34,25 +34,7 @@
         {{/if}}
       </div>
 
-      <div class='contact-info'>
-        <h3>Work</h3>
-        <ul>
-          <li id='locat'>Location: {{user.Location}}</li>
-          <li id='company'>Company Name: {{user.company_name}}</li>
-          <li id='role'>Position: {{user.position}}</li>
-        </ul>
-        <h3>Contact info</h3>
-        <ul>
-          <li id='tel'>Phone Number: {{user.mobile_number}}</li>
-          <li id='mail'><a href="mailto:{{user.email}}">{{user.email}}</a></li>
-          <li><img src="./images/github (1).png" alt=""><img src="./images/slack-logo.png" alt=""><img src="./images/linkedin.png" alt=""></li>
-        </ul>
-        <button
-          type='button'
-          id='edit-button'
-          class='btn btn-secondary btn-sm'
-        >Edit Profile</button>
-      </div>
+
       <div id='contact-input' class='hide'>
         <form class='form-horizontal'>
           <div class='panel panel-default'>
@@ -148,17 +130,20 @@
     </div>
 
     <div class='col col-md-6'>
-      <div class='bio'>
+      <div class='bio box-styling'>
         <h3>BIO</h3>
         <p>{{user.bio}}</p>
       </div>
-      <div>
+      <div id="forums-container" class="box-styling">
+        <div>
         <h4>My Forums</h4>
         <ul>
           {{#each user.forums as |forum|}}
             <li><a href='/forums/{{forum.id}}'>{{forum.title}}</a></li>
             {{/each}}
         </ul>
+        </div>
+        <div>
         <h4>Following Forums:</h4>
         <ul>
           {{#each user.follows as |following|}}
@@ -166,14 +151,37 @@
               <a href='/profile/{{following.forum.id}}'>
                 {{following.forum.title}}
               </a>
-             </li>
+            </li>
            {{/each}}
         </ul>
+        </div>
       </div>
     </div>
   </div>
+  <div class='row gx-0'>
+      <div class='contact-info col col-md-5 box-styling'>
+        <h3>Work</h3>
+        <ul>
+          <li id='locat'>{{user.Location}}</li>
+          <li id='company'>Company Name: {{user.company_name}}</li>
+          <li id='role'>Position: {{user.position}}</li>
+        </ul>
+        <h3>Contact info</h3>
+        <ul>
+          <li id='tel'>Phone: {{user.mobile_number}}</li>
+          <li id='mail'><a href="mailto:{{user.email}}">{{user.email}}</a></li>
+          <li><img src="./images/github (1).png" alt=""><img src="./images/slack-logo.png" alt=""><img src="./images/linkedin.png" alt=""></li>
+        </ul>
+        <button
+          type='button'
+          id='edit-button'
+          class='btn btn-secondary btn-sm'
+        >Edit Profile</button>
+      </div>
 
-<div>
+
+<div class="col col-md-6">
+  <div id="user-follow" class="box-styling">
   <h3>Following:</h3>
   <ul>
     {{#each user.follows as |following|}}
@@ -185,6 +193,8 @@
             {{following.user.last_name}}</p></a></li>
     {{/each}}
   </ul>
+  </div>
+</div>
 </div>
 {{#if (eq user_id user.id)}}
   <script src='./js/aws.js'></script>
