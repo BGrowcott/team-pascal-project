@@ -53,6 +53,7 @@ body {
     align-items: center;
 }
 
+
 .navbar{
     background-color: rgb(241, 221, 221);
     width: 100vw;
@@ -87,6 +88,10 @@ nav-item {
     width: 170px;
     margin-left: 95%;
 }
+ footer {
+     text-align: center;
+     margin-top: 40px;
+ }
 
 
-/*background-image: url("../images/human-circle.svg");
+
