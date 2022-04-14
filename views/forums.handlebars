@@ -1,20 +1,23 @@
 <Head>
-  
+  <link rel='stylesheet' href='/css/forums.css' />
   </Head>
 <Body>
-
+<div class="bodyparts">
 <div class="Header"> 
  <header>
 <h1>List of Available Forums</h1>
 </header> 
 </div>
 <div class="ForumDetails">
+  <div>
 {{#each forums as |forum|}}
     <p><h2 id="forumIdT"><a href="/forums/{{forum.id}}">{{forum.title}}</a></h2></p>
     <p id="forumContent">{{forum.content}}</p>
 {{/each}}
 </div>
+</div>
 <!-- Button trigger modal -->
+<div class=neonbtn>
 <btn data-bs-toggle="modal" data-bs-target="#exampleModal" id="createF">
 <a href="#">
         <span></span>
@@ -22,10 +25,9 @@
         <span></span>
         <span></span>
        Create a Forum
-    </a>
-  
+    </a>  
 </btn>
-
+</div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -53,7 +55,7 @@
  
 
 </div>
-<footer><h6>Back to the top</h6></footer>
+</div>
 </Body>
 <script src='./js/logout.js'></script>
 <script src='./js/forum.js'></script>

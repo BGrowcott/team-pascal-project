@@ -142,11 +142,29 @@ a {
   #forum-container{
       background: whitesmoke;
       padding:20px;
+      width: 100vw;
+
   }
+  .comment-container {
+    background: rgb(238, 233, 226);
+    padding-left:25px;
+    Padding-top:7px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    border: 4px solid blue;
+    border-radius: 45px;
+}
 
   .comment-container:hover{
-      background: burlywood;
-      padding:10px;
-
+      background: burlywood;   
   }
   
+  #forum-body{
+    background: rgb(238, 233, 226);
+    padding-left:25px;
+    Padding-top:7px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    border: 4px solid blue;
+    border-radius: 45px;   
+  }
