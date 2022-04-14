@@ -19,17 +19,24 @@ async function saveInput(e) {
   const position = $('#position').val().trim();
   const phoneNumber = $('#mobile-num').val().trim();
   const email = $('#email').val().trim();
-  const address = $('#work-adds').val().trim();
+  const github = $('#github').val().trim();
+  const slack = $('#slack').val().trim();
+  const linked_in = $('#linkedin').val().trim();
+
 
   const response = await fetch('/api/users/save', {
     method: 'PUT',
     body: JSON.stringify({
+      // first_name: firstName,
+      // last_name: lastName,
       Location: location,
       company_name: companyName,
       position: position,
       mobile_number: phoneNumber,
       email: email,
-      work_address: address,
+      github: github,
+      slack: slack,
+      linked_in: linked_in
     }),
     headers: { 'Content-Type': 'application/json' },
   });
@@ -55,4 +62,11 @@ async function addToFollowing(e) {
   } else {
     alert(response.statusText);
   }
+}
+
+$('#edit-icon').click(editName)
+
+function editName(){
+  $('#name-container').css('display', 'none')
+  $('#edit-name-container').css('display', 'flex')
 }

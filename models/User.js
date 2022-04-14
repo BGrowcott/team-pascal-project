@@ -60,10 +60,18 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    work_address : {
-      type: DataTypes.STRING(200),
+    github : {
+      type: DataTypes.STRING,
       allowNull: true,
     },
+    slack : {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    linked_in: {
+      type: DataTypes.STRING,
+      allowNull: true
+    }
   },
   {
     sequelize,
