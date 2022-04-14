@@ -1,7 +1,14 @@
+<div class="flexcontainer">
 <div class='container'>
 
   <div class='row'>
     <div class='col col-md-6'>
+      <div class='bio'>
+        <h3>BIO</h3>
+        <p>{{user.bio}}</p>
+      </div>
+    </div>
+    <div class='col-md-6'>
       <div class='profile-pic'>
         <h1>{{user.first_name}} {{user.last_name}}</h1>
         {{#if (eq user_id user.id)}}{{else}}
@@ -34,24 +41,31 @@
         {{/if}}
       </div>
 
-      <div class='contact-info'>
-        <h3>Work</h3>
-        <ul>
-          <li id='locat'>Location: {{user.Location}}</li>
-          <li id='company'>Company Name: {{user.company_name}}</li>
-          <li id='role'>Position: {{user.position}}</li>
-        </ul>
+    </div>
+      <div class='contact-info' 'col-md-6'>
         <h3>Contact info</h3>
-        <ul>
-          <li id='tel'>Phone Number: {{user.mobile_number}}</li>
-          <li id='mail'><a href="mailto:{{user.email}}">{{user.email}}</a></li>
-          <li><img src="./images/github (1).png" alt=""><img src="./images/slack-logo.png" alt=""><img src="./images/linkedin.png" alt=""></li>
-        </ul>
+        <br>
+        <p id="locat">Location: </p>
+        <br>
+        <p id="company">Company Name: </p>
+        <br>
+        <p id="role">Position: </p>
+        <br>
+        <p id="tel">Phone Number:</p>
+        <br>
+        <p id="mail">email - clickable icon link</p>
+        <br>
+        <p id="adds">Work Address:</p>
         <button
           type='button'
           id='edit-button'
           class='btn btn-secondary btn-sm'
         >Edit Profile</button>
+      </div>
+        <div class="clicklinks></div>
+        <p>Github - clickable icon link</p>
+        <p>Slack - clickable icon link</p>
+        <p>Linked-in - clickable icon link</p>
       </div>
       <div id='contact-input' class='hide'>
         <form class='form-horizontal'>
@@ -147,12 +161,12 @@
       </div>
     </div>
 
-    <div class='col col-md-6'>
+    <!--<div class='col col-md-6'>
       <div class='bio'>
         <h3>BIO</h3>
         <p>{{user.bio}}</p>
       </div>
-      <div>
+      <div>-->
         <h4>My Forums</h4>
         <ul>
           {{#each user.forums as |forum|}}
