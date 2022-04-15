@@ -28,6 +28,16 @@ console.log(e.target);
     }
 }
 
+
+$('#delete-btn').click(deleteComment);
+
+async function deleteComment (e) {
+  e.preventDefault();
+
+  const deleteElement = $('.comment-container');
+  deleteElement.remove();
+}
+
 $('#add-comment').click(()=>{
   $('.comment-form').css('display', 'initial')
   $('#add-comment').css('display', 'none')
@@ -39,4 +49,5 @@ $('#cancel-comment').click(()=>{
   $('#add-comment').css('display', 'initial')
   $('#cancel-comment').css('display', 'none')
 })
+
 

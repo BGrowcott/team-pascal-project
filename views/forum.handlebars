@@ -1,11 +1,15 @@
-<div id='forum-container' class="box-styling">
-  <div id="forum-head">
+<div id='forum-container' class='box-styling'>
+  <div id='forum-head'>
     <h2>{{forum.title}}</h2>
-    <button class='btn btn-primary' data-id='{{forum.id}}' id='follow-forum'>Follow This Forum +</button>
+    <button
+      class='btn btn-primary'
+      data-id='{{forum.id}}'
+      id='follow-forum'
+    >Follow This Forum +</button>
   </div>
   <div id='forum-body'>
     <p>By
-      <a class="forum-user" href='/profile/{{forum.user.id}}'>
+      <a class='forum-user' href='/profile/{{forum.user.id}}'>
         <img class='tiny-pic' src='{{forum.user.profile_picture}}' alt='' />
         {{forum.user.first_name}}
         {{forum.user.last_name}}
@@ -36,8 +40,19 @@
     {{#each forum.comments as |comment|}}
       <div class='comment-container box-styling'>
         <p>{{comment.content}}</p>
-        <p><a class="forum-user" href='/profile/{{comment.user.id}}'>{{comment.user.first_name}}
-            {{comment.user.last_name}}</a> ~ {{format_date comment.date_created}}</p>
+        <p><a
+            class='forum-user'
+            href='/profile/{{comment.user.id}}'
+          >{{comment.user.first_name}}
+            {{comment.user.last_name}}</a>
+          ~
+          {{format_date comment.date_created}}</p>
+        <button
+          id='delete-btn'
+          data-id='{{forum.id}}'
+          class='button is-warning ml-5 mb-5'
+          type='delete'
+        >Delete</button>
       </div>
     {{/each}}
   </div>
