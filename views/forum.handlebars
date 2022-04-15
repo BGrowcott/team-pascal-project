@@ -1,8 +1,11 @@
-<div id='forum-container'>
+<div id='forum-container' class="box-styling">
+  <div id="forum-head">
+    <h2>{{forum.title}}</h2>
+    <button class='btn btn-primary' data-id='{{forum.id}}' id='follow-forum'>Follow This Forum +</button>
+  </div>
   <div id='forum-body'>
-    <h1>{{forum.title}}</h1>
     <p>By
-      <a href='/profile/{{forum.user.id}}'>
+      <a class="forum-user" href='/profile/{{forum.user.id}}'>
         <img class='tiny-pic' src='{{forum.user.profile_picture}}' alt='' />
         {{forum.user.first_name}}
         {{forum.user.last_name}}
@@ -11,7 +14,6 @@
       {{format_date forum.date_created}}</p>
     <p>{{forum.content}}</p>
   </div>
-  <button data-id='{{forum.id}}' id='follow-forum'>Follow This Forum +</button>
   <form class='comment-form'>
     <div>
       <textarea class='ml-5' name='comment-body'></textarea>
@@ -30,8 +32,8 @@
     {{#each forum.comments as |comment|}}
       <div class='comment-container'>
         <p>{{comment.content}}</p>
-        <p><a href='/profile/{{comment.user.id}}'>{{comment.user.first_name}}
-            {{comment.user.last_name}}</a></p>
+        <p><a class="forum-user" href='/profile/{{comment.user.id}}'>{{comment.user.first_name}}
+            {{comment.user.last_name}}</a> on {{comment.user.date_created}}</p>
       </div>
     {{/each}}
   </div>

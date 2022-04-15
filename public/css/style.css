@@ -48,7 +48,20 @@ h1 {
 }
 
 #forum-container {
-    border: 2px solid black
+    width: 90%;
+    margin: auto;
+}
+
+#forum-head{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.forum-user {
+    display: initial;
+    padding: 0%;
+    font-size: 12px;
 }
 
 .comment-container{
@@ -115,6 +128,10 @@ max-width: 316px;
 
 #user-follow ul li {
     width: 50%;
+}
+
+.contact-image {
+    margin-right: 10px;
 }
 
 

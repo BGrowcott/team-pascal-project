@@ -95,7 +95,7 @@ router.get('/forums', async (req, res) => {
   try {
 
     const forumData = await Forum.findAll({
-      include: {model: User}
+      include: [{model: User}, {model: Comment}]
     });
 
     const forums = forumData.map((forum) => forum.get({ plain: true }));
