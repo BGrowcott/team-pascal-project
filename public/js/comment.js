@@ -27,3 +27,12 @@ console.log(e.target);
           }
     }
 }
+
+$('#delete-btn').click(deleteComment);
+
+async function deleteComment (e) {
+  e.preventDefault();
+
+  const deleteElement = $('.comment-container');
+  deleteElement.remove();
+}
