@@ -39,9 +39,10 @@ async function followForum(e) {
   });
   if (response.ok) {
     setTimeout(() => {
-      // document.location.replace(`/myprofile`);
+      $('#follow-forum').css('display', 'none')
     }, 200);
   } else {
     alert(response.statusText);
   }
 }
+

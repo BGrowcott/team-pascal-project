@@ -27,3 +27,16 @@ console.log(e.target);
           }
     }
 }
+
+$('#add-comment').click(()=>{
+  $('.comment-form').css('display', 'initial')
+  $('#add-comment').css('display', 'none')
+  $('#cancel-comment').css('display', 'initial')
+})
+
+$('#cancel-comment').click(()=>{
+  $('.comment-form').css('display', 'none')
+  $('#add-comment').css('display', 'initial')
+  $('#cancel-comment').css('display', 'none')
+})
+
