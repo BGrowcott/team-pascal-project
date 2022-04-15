@@ -8,6 +8,9 @@ nav {
     background-color: rgba(0, 0, 0, 0.826);
     text-align: center;
     color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
 nav div ul {
@@ -15,6 +18,11 @@ nav div ul {
     align-items: center;
     justify-content: space-around;
     padding: 0px;
+    margin-bottom: 0px;
+}
+
+#nav-spacing {
+    padding-top: 80px
 }
 
 #links {
@@ -60,12 +68,8 @@ h1 {
 
 .forum-user {
     display: initial;
-    padding: 0%;
+    padding: 5px;
     font-size: 12px;
-}
-
-.comment-container{
-    border: 2px solid grey;
 }
 
 .tiny-pic{
@@ -132,6 +136,31 @@ max-width: 316px;
 
 .contact-image {
     margin-right: 10px;
+}
+
+#name-container, #bio-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#edit-name-container {
+    display: none;
+}
+
+#edit-name-container input {
+    width:40%;
+}
+
+.edit-icon {
+    width: 40px;
+    cursor: pointer;
+}
+
+#edit-bio-container {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
 }
 
 

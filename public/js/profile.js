@@ -27,8 +27,6 @@ async function saveInput(e) {
   const response = await fetch('/api/users/save', {
     method: 'PUT',
     body: JSON.stringify({
-      // first_name: firstName,
-      // last_name: lastName,
       Location: location,
       company_name: companyName,
       position: position,
@@ -64,9 +62,64 @@ async function addToFollowing(e) {
   }
 }
 
-$('#edit-icon').click(editName)
+//functions for editing names and bio
+
+$('#edit-name').click(editName)
 
 function editName(){
   $('#name-container').css('display', 'none')
   $('#edit-name-container').css('display', 'flex')
 }
+
+$('#edit-bio').click(editBio)
+
+function editBio(){
+  $('#bio-container').css('display', 'none')
+  $('#edit-bio-container').css('display', 'flex')
+}
+
+// saving function
+
+$('#save-name').click(saveName)
+
+async function saveName(e) {
+  e.preventDefault();
+  const firstName = $('#edit-first_name-input').val().trim()
+  const lastName = $('#edit-last_name-input').val().trim()
+
+
+const response = await fetch('/api/users/save', {
+    method: 'PUT',
+    body: JSON.stringify({
+      first_name: firstName,
+      last_name: lastName
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    document.location.replace(`/myprofile`);
+  } else {
+    alert(response.statusText);
+  }
+}
+
+$('#save-bio').click(saveBio)
+
+async function saveBio(e) {
+  e.preventDefault();
+  const bio = $('#edit-bio-input').val().trim()
+
+const response = await fetch('/api/users/save', {
+    method: 'PUT',
+    body: JSON.stringify({
+      bio: bio
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    document.location.replace(`/myprofile`);
+  } else {
+    alert(response.statusText);
+  }
+}
+

@@ -30,10 +30,10 @@
   <div id='all-comments'>
     <h2>Comments:</h2>
     {{#each forum.comments as |comment|}}
-      <div class='comment-container'>
+      <div class='comment-container box-styling'>
         <p>{{comment.content}}</p>
         <p><a class="forum-user" href='/profile/{{comment.user.id}}'>{{comment.user.first_name}}
-            {{comment.user.last_name}}</a> on {{comment.user.date_created}}</p>
+            {{comment.user.last_name}}</a> ~ {{format_date comment.date_created}}</p>
       </div>
     {{/each}}
   </div>
