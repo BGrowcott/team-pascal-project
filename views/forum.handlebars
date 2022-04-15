@@ -18,21 +18,25 @@
       {{format_date forum.date_created}}</p>
     <p>{{forum.content}}</p>
   </div>
-  <form class='comment-form'>
+  <div id='all-comments'>
+    <div id="comment-header">
+    <h2>Comments:</h2>
+    <button id="add-comment" class="btn btn-primary">Add Comment +</button>
+    <button id="cancel-comment" class="btn btn-secondary">Cancel</button>
+    </div>
+    <form class='comment-form'>
     <div>
-      <textarea class='ml-5' name='comment-body'></textarea>
+      <textarea class='ml-5' id="new-comment-input" name='comment-body'></textarea>
     </div>
     <div>
       <button
         id='comment-btn'
         data-id='{{forum.id}}'
-        class='button is-warning ml-5 mb-5'
+        class='btn btn-primary is-warning ml-5 mb-5'
         type='submit'
-      >add comment</button>
+      >Submit Comment</button>
     </div>
   </form>
-  <div id='all-comments'>
-    <h2>Comments:</h2>
     {{#each forum.comments as |comment|}}
       <div class='comment-container box-styling'>
         <p>{{comment.content}}</p>
