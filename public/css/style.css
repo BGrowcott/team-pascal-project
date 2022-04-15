@@ -163,6 +163,24 @@ max-width: 316px;
     justify-content: space-between;
 }
 
+#comment-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-form {
+    display: none;
+}
+
+#new-comment-input{
+    width: 100%;
+    height: 100px;
+}
+
+#cancel-comment{
+    display: none;
+}
 
 
 
