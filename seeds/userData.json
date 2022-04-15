@@ -5,7 +5,6 @@
         "bio": "aspiring web-developer, likes traveling",
         "profession": "unemployed",
         "account_id": 1,
-        "Location": [],
         "Mobile_Number": "2312434124"
     },
     {
@@ -13,7 +12,7 @@
         "last_name": "Growcott",
         "bio": "aspiring web-developer, likes football",
         "profession": "customer service",
-        "profile_picture": "https://teampascal.s3.eu-west-2.amazonaws.com/images/IMG-2174+(1).jpg",
+        "profile_picture": "https://teampascal.s3.eu-west-2.amazonaws.com/images/1.jpg",
         "account_id": 2,
         "Company_name": "Ace Design",
         "Mobile_Number": "2312434234"

@@ -3,10 +3,20 @@
   <div class='row gx-0'>
     <div class='col col-md-5'>
       <div class='profile-pic box-styling'>
+        <div id="name-container">
         <h2>{{user.first_name}} {{user.last_name}}</h2>
-        {{#if (eq user_id user.id)}}{{else}}
-          <button id='follow-user' data-id='{{user.id}}'>Follow +</button>
+        {{#if (eq user_id user.id)}}
+        <img id="edit-name" title="Edit Name" class="edit-icon" src="./images/edit-button.png" alt="">
+        {{else}}
+          <button class="btn btn-primary" id='follow-user' data-id='{{user.id}}'>Follow +</button>
         {{/if}}
+        </div>
+        <div id="edit-name-container">
+            <input type="text" name="edit-first_name" id="edit-first_name-input" value="{{user.first_name}}">
+            <input type="text" name="edit-last_name" id="edit-last_name-input" value="{{user.last_name}}">
+            <button id="save-name" class="btn btn-primary">Save</button>
+        </div>
+        <hr>
         <div
           id='pic-container'
           style='background-image: url({{user.profile_picture}});'
@@ -31,22 +41,28 @@
               >Submit</button>
             </form>
           </div>
+          <button
+          type='button'
+          id='edit-button'
+          class='btn btn-secondary btn-sm'
+          >
+           Edit Work/Contact
+          </button>
         {{/if}}
       </div>
 
-
-      <div id='contact-input' class='hide'>
+      <div id='contact-input' class='hide box-styling'>
         <form class='form-horizontal'>
           <div class='panel panel-default'>
             <div class='panel-heading'>
-              <h4 class='panel-title'>Profession info</h4>
+              <h4 class='panel-title'>Profession</h4>
             </div>
             <div class='panel-body'>
               <div class='form-group'>
                 <label class='col-sm-2 control-label'>Location</label>
                 <div class='col-sm-10'>
                   <select id='location' class='form-control'>
-                    <option selected=''>Select country</option>
+                    <option selected='{{user.location}}'>Select country</option>
                     <option>Belgium</option>
                     <option>Canada</option>
                     <option>Denmark</option>
@@ -60,13 +76,13 @@
               <div class='form-group'>
                 <label class='col-sm-2 control-label'>Company name</label>
                 <div class='col-sm-10'>
-                  <input type='text' id='company-name' class='form-control' />
+                  <input type='text' id='company-name' class='form-control' value="{{user.company_name}}"/>
                 </div>
               </div>
               <div class='form-group'>
                 <label class='col-sm-2 control-label'>Position</label>
                 <div class='col-sm-10'>
-                  <input type='text' id='position' class='form-control' />
+                  <input type='text' id='position' class='form-control' value="{{user.position}}"/>
                 </div>
               </div>
             </div>
@@ -84,7 +100,7 @@
                     type='tel'
                     id='mobile-num'
                     class='form-control'
-                    required
+                    value="{{user.mobile_number}}"
                   />
                 </div>
               </div>
@@ -95,18 +111,41 @@
                     type='email'
                     id='email'
                     class='form-control'
-                    required
+                    value="{{user.email}}"
                   />
                 </div>
               </div>
               <div class='form-group'>
-                <label class='col-sm-2 control-label'>Work address</label>
+                <label class='col-sm-2 control-label'>Github</label>
                 <div class='col-sm-10'>
-                  <textarea
-                    rows='3'
-                    id='work-adds'
+                  <input
+                    type='tel'
+                    id='github'
                     class='form-control'
-                  ></textarea>
+                    value="{{user.github}}"
+                  />
+                </div>
+              </div>
+              <div class='form-group'>
+                <label class='col-sm-2 control-label'>Slack</label>
+                <div class='col-sm-10'>
+                  <input
+                    type='tel'
+                    id='slack'
+                    class='form-control'
+                    value="{{user.slack}}"
+                  />
+                </div>
+              </div>
+              <div class='form-group'>
+                <label class='col-sm-2 control-label'>LinkedIn</label>
+                <div class='col-sm-10'>
+                  <input
+                    type='tel'
+                    id='linkedin'
+                    class='form-control'
+                    value="{{user.linked_in}}"
+                  />
                 </div>
               </div>
             </div>
@@ -131,20 +170,34 @@
 
     <div class='col col-md-6'>
       <div class='bio box-styling'>
+        <div id="bio-header">
         <h3>BIO</h3>
-        <p>{{user.bio}}</p>
+        {{#if (eq user_id user.id)}}
+        <img id="edit-bio" title="Edit Bio" class="edit-icon" src="./images/edit-button.png" alt="">
+        {{/if}}
+        </div>
+        <hr>
+        <div id="bio-container">
+          <p>{{user.bio}}</p>
+        </div>
+        <div id="edit-bio-container">
+          <textarea name="edit-bio-input" id="edit-bio-input" cols="50" rows="5">{{user.bio}}</textarea>
+          <button id="save-bio" class="btn btn-primary">Save</button>
+        </div>
       </div>
       <div id="forums-container" class="box-styling">
         <div>
         <h4>My Forums</h4>
+        <hr>
         <ul>
           {{#each user.forums as |forum|}}
             <li><a href='/forums/{{forum.id}}'>{{forum.title}}</a></li>
-            {{/each}}
+          {{/each}}
         </ul>
         </div>
         <div>
         <h4>Following Forums:</h4>
+        <hr>
         <ul>
           {{#each user.follows as |following|}}
             <li class='following-item'>
@@ -159,30 +212,33 @@
     </div>
   </div>
   <div class='row gx-0'>
-      <div class='contact-info col col-md-5 box-styling'>
-        <h3>Work</h3>
+      <div class='contact-info box-styling col-md-5'>
+        <h3>Profession</h3>
+        <hr>
         <ul>
-          <li id='locat'>{{user.Location}}</li>
+          <li id='locat'>Location: {{user.Location}}</li>
           <li id='company'>Company Name: {{user.company_name}}</li>
           <li id='role'>Position: {{user.position}}</li>
         </ul>
-        <h3>Contact info</h3>
+        <h3>Contact</h3>
+        <hr>
         <ul>
           <li id='tel'>Phone: {{user.mobile_number}}</li>
-          <li id='mail'><a href="mailto:{{user.email}}">{{user.email}}</a></li>
-          <li><img src="./images/github (1).png" alt=""><img src="./images/slack-logo.png" alt=""><img src="./images/linkedin.png" alt=""></li>
+          <li id='mail'><a href="mailto:{{user.email}}"><img src="./images/envelope.svg" alt="">{{user.email}}</a></li>
+          <li>
+            <a href="{{user.github}}"><img class="contact-image" src="./images/github (1).png" alt=""></a>
+            <a href="{{user.slack}}"><img class="contact-image" src="./images/slack-logo.png" alt=""></a>
+            <a href="{{user.linked_in}}"><img class="contact-image" src="./images/linkedin.png" alt=""></a>
+          </li>
         </ul>
-        <button
-          type='button'
-          id='edit-button'
-          class='btn btn-secondary btn-sm'
-        >Edit Profile</button>
       </div>
+      
 
 
 <div class="col col-md-6">
   <div id="user-follow" class="box-styling">
   <h3>Following:</h3>
+  <hr>
   <ul>
     {{#each user.follows as |following|}}
       <li class='following-item'><a href='/profile/{{following.user.id}}'><div
@@ -194,6 +250,7 @@
     {{/each}}
   </ul>
   </div>
+</div>
 </div>
 </div>
 {{#if (eq user_id user.id)}}

@@ -76,7 +76,7 @@ router.get(`/myprofile`, withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-    console.log(user)
+
     res.render('profile', {
       user,
       logged_in: req.session.logged_in, 
@@ -95,7 +95,7 @@ router.get('/forums', async (req, res) => {
   try {
 
     const forumData = await Forum.findAll({
-      include: {model: User}
+      include: [{model: User}, {model: Comment}]
     });
 
     const forums = forumData.map((forum) => forum.get({ plain: true }));

@@ -6,13 +6,13 @@
  <header class="forum-header">
 <h2>List of Available Forums</h2>
 <!-- Button trigger modal -->
-<btn data-bs-toggle="modal" data-bs-target="#exampleModal">
+<btn id="create-forum" data-bs-toggle="modal" data-bs-target="#exampleModal">
 <a href="#">
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-       Create a Forum
+       Create a Forum +
     </a>
   
 </btn>
@@ -29,6 +29,7 @@
       <footer class="blockquote-footer">{{forum.user.first_name}}<cite title="Source Title"> {{format_date forum.date_created}}</cite></footer>
     </blockquote>
   </div>
+  <p>{{forum.comments.length}} Comment(s)</p>
 </div>
 {{/each}}
 </div>
