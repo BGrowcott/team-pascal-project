@@ -54,7 +54,7 @@ A user can log in, create a profile, browse and create forums and converse with 
 This project is covered under the MIT License.
 
 ## Contributing
-
+---
 Ben Growcott - [GitHub](https://github.com/BGrowcott)
 <br>
 Akash Limbu - [GitHub](https://github.com/AkashWanem)
@@ -66,14 +66,12 @@ Jean McLeod - [GitHub](https://github.com/Abrics)
 
 If you have any questions or suggestions please contact us via GitHub or Email:
 
-Ben Growoctt:
-[GitHub](https://github.com/BGrowcott) [Email](mailto:bg.coding101@gmail.com)
+Ben Growcott:
+[Email](mailto:bg.coding101@gmail.com)
+
 
 Akash Limbu:
 [Email](mailto:akaah.wanem@gmail.com)
 
 Jean McLeod:
 [GitHub](https://github.com/Abrics)
-
-
-----
