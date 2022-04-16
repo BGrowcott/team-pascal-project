@@ -56,13 +56,19 @@ This project is covered under the MIT License.
 ## Contributing
 
 Ben Growcott - [GitHub](https://github.com/BGrowcott)
+Akash Limbu - [GitHub](https://github.com/AkashWanem)
 
 ## Questions
 
 If you have any questions or suggestions please contact me via my GitHub or Email:
 
+Ben Growoctt:
 [GitHub](https://github.com/BGrowcott)
 
 [Email](mailto:bg.coding101@gmail.com)
+
+Akash Limbu:
+
+[Email](mailto:akaah.wanem@gmail.com)
 
 ----
