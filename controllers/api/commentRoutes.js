@@ -28,12 +28,11 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
-  console.log(req.body);
     try {
         const delComment= await Comment.destroy({
-            user_id: req.session.user_id,
-            forum_id: req.body.forum_id,
-            content: req.body.content,
+          where: {
+            id: req.params.id,
+          },
         });
     
         res.status(200).json(delComment);

@@ -46,3 +46,19 @@ async function followForum(e) {
   }
 }
 
+// delete a forum
+
+$('#delete-forum').click(deleteForum);
+
+async function deleteForum (e) {
+  e.preventDefault();
+  const id = e.target.getAttribute('data-id');
+    const response = await fetch(`/api/forums/${id}`, {
+      method: 'DELETE',
+    });
+    if (response.ok) {
+      document.location.replace(`/forums`);
+    } else {
+      alert('Failed to delete post');
+    }
+}

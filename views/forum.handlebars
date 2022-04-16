@@ -1,11 +1,19 @@
 <div id='forum-container' class='box-styling'>
   <div id='forum-head'>
     <h2>{{forum.title}}</h2>
+    {{#if (eq forum.user_id user_id)}}
+      <button
+      class='btn btn-warning'
+      data-id='{{forum.id}}'
+      id='delete-forum'
+    >Delete Forum</button>
+    {{else}}
     <button
       class='btn btn-primary'
       data-id='{{forum.id}}'
       id='follow-forum'
     >Follow This Forum +</button>
+    {{/if}}
   </div>
   <div id='forum-body'>
     <p>By
@@ -47,12 +55,14 @@
             {{comment.user.last_name}}</a>
           ~
           {{format_date comment.date_created}}</p>
+        {{#if (eq ../user_id comment.user_id)}}
         <button
           id='delete-btn'
-          data-id='{{forum.id}}'
-          class='button is-warning ml-5 mb-5'
+          data-id='{{comment.id}}'
+          class='btn btn-warning is-warning ml-5 mb-5'
           type='delete'
         >Delete</button>
+        {{/if}}
       </div>
     {{/each}}
   </div>
