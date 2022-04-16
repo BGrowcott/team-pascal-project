@@ -10,7 +10,7 @@ A user can log in, create a profile, browse and create forums and converse with 
 
 ## Table of Contents
 
-2. [Usage](#usage)
+1. [Usage](#usage)
 2. [Technology Stack](#technology-stack)
 3. [License](#license)
 4. [Contributing](#contributing)
