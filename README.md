@@ -56,10 +56,11 @@ This project is covered under the MIT License.
 ## Contributing
 ---
 Ben Growcott - [GitHub](https://github.com/BGrowcott)
-
+<br>
 Akash Limbu - [GitHub](https://github.com/AkashWanem)
-
+<br>
 Jean McLeod - [GitHub](https://github.com/Abrics)
+<br>
 
 ## Questions
 
@@ -68,11 +69,9 @@ If you have any questions or suggestions please contact us via GitHub or Email:
 Ben Growcott:
 [Email](mailto:bg.coding101@gmail.com)
 
+
 Akash Limbu:
 [Email](mailto:akaah.wanem@gmail.com)
 
 Jean McLeod:
-[Email](https://github.com/Abrics)
-
----
-
+[GitHub](https://github.com/Abrics)
