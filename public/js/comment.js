@@ -33,9 +33,15 @@ $('#delete-btn').click(deleteComment);
 
 async function deleteComment (e) {
   e.preventDefault();
-
-  const deleteElement = $('.comment-container');
-  deleteElement.remove();
+  const id = e.target.getAttribute('data-id');
+    const response = await fetch(`/api/comments/${id}`, {
+      method: 'DELETE',
+    });
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert('Failed to delete post');
+    }
 }
 
 $('#add-comment').click(()=>{

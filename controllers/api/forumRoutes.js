@@ -40,4 +40,21 @@ router.post('/follow', withAuth, async (req, res) => {
   }
 });
 
+//delete forum
+
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+      const delForum= await Forum.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      res.status(200).json(delForum);
+    } catch (err) {
+      console.log(err);
+      res.status(400).json(err);
+    }
+});
+
 module.exports = router;

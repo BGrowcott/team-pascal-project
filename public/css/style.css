@@ -39,10 +39,16 @@ h1 {
 .form-container {
     width: 45%;
     margin: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
 }
 
 .forms-container {
-    display: flex;
+    display: none;
+    width: 80%;
+    margin: auto;
+    align-items: center;
 }
 
 .hide {
@@ -183,6 +189,8 @@ max-width: 316px;
 }
 
 .spinner {
+    cursor: pointer;
+    margin-top: 180px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -229,8 +237,9 @@ max-width: 316px;
 }
 
 .welcometext {
-    Height: 70px;
-    width: 200px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5px;
     
 }
 

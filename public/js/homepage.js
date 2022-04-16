@@ -48,3 +48,8 @@ async function signUp(e) {
     }
   }
 };
+
+$('.spinner').click(()=>{
+  $('.forms-container').css('display', 'flex')
+  $('.spinner').css('display', 'none')
+})
