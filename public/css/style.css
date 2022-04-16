@@ -190,7 +190,7 @@ max-width: 316px;
 
 .spinner {
     cursor: pointer;
-    margin-top: 180px;
+    margin-top: 160px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -237,10 +237,16 @@ max-width: 316px;
 }
 
 .welcometext {
-    width: 80%;
+    width: 40%;
     margin: auto;
     margin-bottom: 5px;
-    
+    text-align: center;
+    font-size: larger;
+}
+
+#welcome {
+    text-align: center;
+    font-size: 60px;
 }
 
 
