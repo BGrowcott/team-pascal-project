@@ -34,7 +34,7 @@ A user can log in, create a profile, browse and create forums and converse with 
 
 ### Deployed Application
 
-[Gunz, Money and Tech Blogs](https://pascal-project.herokuapp.com/)
+[Bootcampers Alumni](https://pascal-project.herokuapp.com/)
 ## Technology Stack
 
 - JavaScript
@@ -54,18 +54,18 @@ A user can log in, create a profile, browse and create forums and converse with 
 This project is covered under the MIT License.
 
 ## Contributing
-
+---
 Ben Growcott - [GitHub](https://github.com/BGrowcott)
+
 Akash Limbu - [GitHub](https://github.com/AkashWanem)
+
 Jean McLeod - [GitHub](https://github.com/Abrics)
 
 ## Questions
 
 If you have any questions or suggestions please contact us via GitHub or Email:
 
-Ben Growoctt:
-[GitHub](https://github.com/BGrowcott)
-
+Ben Growcott:
 [Email](mailto:bg.coding101@gmail.com)
 
 Akash Limbu:
@@ -73,4 +73,6 @@ Akash Limbu:
 
 Jean McLeod:
 [Email](https://github.com/Abrics)
-----
+
+---
+
